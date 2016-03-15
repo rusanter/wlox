@@ -1,0 +1,31 @@
+# FrontEnd
+<VirtualHost *:80>
+
+	ServerAdmin webmaster@localhost
+	DocumentRoot /opt/wlox/wlox/frontend/htdocs
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	<Directory /opt/wlox/wlox/frontend/htdocs>
+  		Require all granted
+	</Directory>
+
+        Alias /api /opt/wlox/wlox/api/htdocs
+	<Directory /opt/wlox/wlox/api/htdocs>
+		Require ip ::1
+	</Directory>
+
+        Alias /auth /opt/wlox/wlox/auth/htdocs
+	<Directory /opt/wlox/wlox/auth/htdocs>
+		Require ip ::1
+	</Directory>
+
+        Alias /admin /opt/wlox/wlox/backstage2
+	<Directory /opt/wlox/wlox/backstage2>
+		Require all granted
+	</Directory>
+
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
