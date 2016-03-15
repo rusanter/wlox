@@ -42,14 +42,18 @@ class Email {
 		$mail = new PHPMailer();
 		$mail->isSMTP();
 		$mail->CharSet = 'UTF-8';
-		$mail->SMTPDebug = 0;
+		$mail->SMTPDebug = 4;
 		$mail->Debugoutput = 'html';
 		$mail->Host = $CFG->email_smtp_host;
 		$mail->Port = $CFG->email_smtp_port;
 		$mail->SMTPSecure = $CFG->email_smtp_security;
-		$mail->SMTPAuth = true;
-		$mail->Username = $CFG->email_smtp_username;
-		$mail->Password = $CFG->email_smtp_password;
+		if (!$CFG->email_smtp_username) {
+			$mail->SMTPAuth = false;
+		} else {
+			$mail->SMTPAuth = true;
+			$mail->Username = $CFG->email_smtp_username;
+			$mail->Password = $CFG->email_smtp_password;
+                }
 		$mail->setFrom($CFG->email_smtp_send_from,$from_name);
 		$mail->addReplyTo($from);
 		

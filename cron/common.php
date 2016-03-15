@@ -1,5 +1,5 @@
 <?php 
-require_once ("cfg.php");
+require_once ("../etc/cfg.php");
 require_once ("lib/dblib.php");
 require_once ("lib/stdlib.php");
 require_once ("lib/DB.php");
