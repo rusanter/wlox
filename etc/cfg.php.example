@@ -1,0 +1,14 @@
+<?php
+class object {}
+$CFG = new object ( );
+$CFG->dbhost = "";
+$CFG->dbname = "";
+$CFG->dbuser = "";
+$CFG->dbpass = "";
+
+// Front-End Configuration
+$CFG->api_url = 'http://localhost/api/api.php';
+$CFG->auth_login_url = 'http://localhost/auth/login.php';
+$CFG->auth_verify_token_url = 'http://localhost/auth/verify_token.php';
+
+?>
