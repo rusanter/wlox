@@ -30,8 +30,8 @@
 	<![endif]-->
     
     <!-- ######### CSS STYLES ######### -->
-	<link rel="stylesheet" href="css/style.css?v=20150625" type="text/css" />
-    
+	<!--<link rel="stylesheet" href="css/style.css?v=20150625" type="text/css" />-->
+    <link rel="stylesheet" href="css/style.css?v=20150666" type="text/css" />  
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     
     <!-- responsive devices styles -->
@@ -43,7 +43,8 @@
     <!--<link rel="stylesheet" href="css/colors/blue.css" />-->
     <!--<link rel="stylesheet" href="css/colors/green.css" />-->
     <!--<link rel="stylesheet" href="css/colors/red.css" />-->
-    <link rel="stylesheet" href="css/colors/cyan.css" />
+    <!--<link rel="stylesheet" href="css/colors/cyan.css" />-->
+     <link rel="stylesheet" href="css/colors/orange.css?v=4" />
     <!--<link rel="stylesheet" href="css/colors/purple.css" />-->
     <!--<link rel="stylesheet" href="css/colors/pink.css" />-->
     <!--<link rel="stylesheet" href="css/colors/brown.css" />-->
@@ -59,7 +60,7 @@
 	<? } ?>
 	
 	<? if ($CFG->self == 'api-docs.php') { ?>
-	<link rel="stylesheet" media="screen" href="css/prism.css" type="text/css" />
+	<link rel="stylesheet" media="screen" href="css/prism.css?v=1" type="text/css" />
 	<? } ?>
 	
 	<? if ($CFG->self == 'contact.php' || $CFG->self == 'login.php' || $CFG->self == 'register.php' || $CFG->self == 'forgot.php') { ?>
@@ -117,16 +118,42 @@
                 <li>|</li>
                 <li><a target="_blank" href="https://github.com/wlox/wlox/"><i class="fa fa-github"></i> GitHub</a></li>
                 <li>|</li>
-                <li><a target="_blank" href="https://cryptocapital.co"><img src="images/crypto_logo.png" /></a></li>
+                <li><a target="_blank" href="https://cryptocapital.co"><img src="images/crypto_logo.png"/></a></li>
             </ul>
         
             <ul class="tci_list">
                 <? if (!User::isLoggedIn()) { ?>
-                <li><a href="login.php"><i class="fa fa-key"></i> <?= Lang::string('home-login') ?></a></li>
-                <li>|</li>
-                <li><a href="<?= Lang::url('register.php') ?>"><i class="fa fa-user"></i> <?= Lang::string('home-register') ?></a></li>
+                <li>
+                    <div class="navbar-brand" href="login.php">
+                      <a href="login.php">
+                         <img src="images/elements/icon-login.svg" alt="icon wallet" height="33" width="33">
+                      </a>
+                    </div>
+                    <div class="navbar-brand marg" href="login.php">
+                      <a href="login.php">
+                        <span> <?= Lang::string('home-login') ?></span>
+                        </a>
+                    </div>
+                </li>
+               
+                <li>
+                    <div class="navbar-brand" href="<?= Lang::url('register.php') ?>">
+                      <a href="<?= Lang::url('register.php') ?>">  
+                        <img src="images/elements/icon-signup.svg" alt="icon wallet" height="33" width="33">
+                        </a>
+                     </div>
+                    <div class="navbar-brand marg" href="register.php">
+                       <a href="register.php"> 
+                         <span> <?= Lang::string('home-register') ?></span>
+                        </a>
+                    </div>
+                </li>
                 <? } else { ?>
-                <li><a href="account.php"><i class="fa fa-user"></i> <?= User::$info['user'] ?></a> | <a href="logout.php?log_out=1&uniq=<?= $_SESSION["logout_uniq"] ?>"><i class="fa fa-unlock"></i> <?= Lang::string('log-out') ?></a></li>
+                <li>
+                    <div class="navbar-brand" href="account.php">
+                        <i class="fa fa-user"></i> <?= User::$info['user'] ?></div>  
+                    <div class="navbar-brand" href="logout.php?log_out=1&uniq=<?= $_SESSION["logout_uniq"] ?>">
+                        <i class="fa fa-unlock"></i> <?= Lang::string('log-out') ?></div></li>
                 <? } ?>
                 <li class="empty margin-left">
                 	<label for="language_selector"><img src="images/<?= $CFG->language ?>.png" /></label>
