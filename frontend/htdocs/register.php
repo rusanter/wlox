@@ -65,8 +65,16 @@ include 'includes/head.php';
 ?>
 <div class="page_title">
 	<div class="container">
-		<div class="title"><h1><?= $page_title ?></h1></div>
-        <div class="pagenation">&nbsp;<a href="index.php"><?= Lang::string('home') ?></a> <i>/</i> <a href="register.php"><?= Lang::string('register') ?></a></div>
+		<div class="title">
+            <h1><?= $page_title ?></h1>
+               <br>
+            <hr class="mainHr">
+        </div>
+        <div class="pagenation">&nbsp;
+            <a href="index.php"><?= Lang::string('home') ?></a>
+            <i>/</i> 
+            <a href="register.php"><?= Lang::string('home-register') ?></a>
+        </div>
 	</div>
 </div>
 <div class="container">
@@ -79,10 +87,15 @@ include 'includes/head.php';
             ?>
             <div class="content">
             	<h3 class="section_label">
-                    <span class="left"><i class="fa fa-user fa-2x"></i></span>
+                    <!--<span class="left"><i class="fa fa-user fa-2x"></i></span>-->
                     <span class="right"><?= Lang::string('settings-registration-info') ?></span>
                 </h3>
+                 <br>
+                <div>
+                  <hr>
+                </div>
                 <div class="clear"></div>
+                
                 <?
                 $currencies_list = array();
                 if ($CFG->currencies) {

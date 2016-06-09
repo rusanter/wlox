@@ -70,6 +70,11 @@ if (!User::isLoggedIn()) {
 ?>
 
 <div class="container_full">
+  <div id="clouds">
+    <ul>
+      <li id="mountains-light" style="bottom:-65.5px;"></li>  
+      <li id="mountains-dark" style="bottom:-52.75px;"></li>
+    </ul>
 	<?php 
 	if ($CFG->language == 'en' || $CFG->language == 'es' || empty($CFG->language))
 		$wordwrap = 80;
@@ -82,7 +87,7 @@ if (!User::isLoggedIn()) {
 		<div class="container">
 			<h1 <?= ($CFG->language == 'ru') ? 'class="caption_ru"' : false ?>><?= $content['title'] ?></h1>
 			<p class="text"><?= wordwrap(strip_tags($content['content']),$wordwrap,'<br/>') ?> <a class="morestuff" href="<?= Lang::url('about.php') ?>">>></a></p>   
-			<div class="crypto_logo"><a target="_blank" href="https://cryptocapital.co">Integrated With <img src="images/crypto_logo.png" /></a></div>
+			<div class="crypto_logo"><a target="_blank" href="https://cryptocapital.co">Integrated With <img src="images/elements/cryptocapital_logo.png"  height="50px" width="28%" /></a></div>
 			<a href="login.php" class="button_slider"><i class="fa fa-key"></i>&nbsp;&nbsp;<?= Lang::string('home-login') ?></a>       
 			<a href="<?= Lang::url('register.php') ?>" class="button_slider"><i class="fa fa-user"></i>&nbsp;&nbsp;<?= Lang::string('home-register') ?></a>
 			<div class="clear"></div>
@@ -106,6 +111,7 @@ if (!User::isLoggedIn()) {
 			<div class="bg"></div>
 		</div>
 	</div>
+  </div>
 </div>
 
 <div class="clearfix"></div>
@@ -260,7 +266,7 @@ if (!User::isLoggedIn()) {
         	</div>
         </div>
         <div class="one_half last">
-        	<h3><?= Lang::string('home-live-orders') ?> <a href="order-book.php" class="highlight gray"><i class="fa fa-plus-square"></i> <?= Lang::string('order-book-see') ?></a></h3>
+        	<h3><?= Lang::string('home-live-orders') ?> <a href="order-book.php" class="highlight orange"><i class="fa fa-plus-square"></i> <?= Lang::string('order-book-see') ?></a></h3>
         	<div class="one_half">
         		<div class="table-style">
         			<table class="table-list trades" id="bids_list">
@@ -344,7 +350,7 @@ if (!User::isLoggedIn()) {
 		}
         ?>
         <div class="clearfix mar_top5"></div>
-        <a href="<?= Lang::url('press-releases.php') ?>" class="highlight gray bigger"><i class="fa fa-plus-square"></i> <?= Lang::string('news-see-all') ?></a>
+        <a href="<?= Lang::url('press-releases.php') ?>" class="highlight orange bigger"><i class="fa fa-plus-square"></i> <?= Lang::string('news-see-all') ?></a>
     </div>
 	<div class="clearfix mar_top8"></div>
 </div><!-- end features section 3 -->

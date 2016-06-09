@@ -56,14 +56,26 @@ include 'includes/head.php';
 ?>
 <div class="page_title">
 	<div class="container">
-		<div class="title"><h1><?= Lang::string('home-login') ?></h1></div>
-        <div class="pagenation">&nbsp;<a href="index.php"><?= Lang::string('home') ?></a> <i>/</i> <a href="login.php"><?= Lang::string('home-login') ?></a></div>
+		<div class="title">
+            <h1><?= Lang::string('home-login') ?></h1>
+                 <br>
+            <hr class="mainHr">
+        </div>
+        <div class="pagenation">&nbsp;
+            <a href="index.php"><?= Lang::string('home') ?></a> 
+            <i>/</i> 
+            <a href="login.php"><?= Lang::string('home-login') ?></a>
+        </div>
 	</div>
 </div>
+<hr class="mainHr">
 <div class="fresh_projects login_bg">
 	<div class="clearfix mar_top8"></div>
 	<div class="container">
     	<h2><?= Lang::string('home-login') ?></h2>
+        <br>
+        <hr>
+        
     	<? 
     	if (count(Errors::$errors) > 0) {
 			echo '
@@ -86,11 +98,15 @@ include 'includes/head.php';
     	<form method="POST" action="login.php" name="login">
 	    	<div class="loginform">
 	    		<a href="forgot.php"><?= Lang::string('forgot-ask') ?></a>
+                </br>
 	    		<div class="loginform_inputs">
 		    		<div class="input_contain">
 		    			<i class="fa fa-user"></i>
 		    			<input type="text" class="login" name="login[user]" value="<?= $user1 ?>">
 		    		</div>
+                </div>
+                </br>
+                <div class="loginform_inputs">
 		    		<div class="separate"></div>
 		    		<div class="input_contain last">
 		    			<i class="fa fa-lock"></i>
