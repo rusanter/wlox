@@ -2,9 +2,9 @@ FROM php/wlox
 MAINTAINER David Rodriguez <david@goldenfrogtech.com>
 
 #directorio
-WORKDIR /cronwlox
+WORKDIR /var/www/wlox/cron/
 
-ADD . /cronwlox 
+ADD . /var/www/wlox/cron/
 
 RUN mv -v cfg.php.example cfg.php
 
