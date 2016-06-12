@@ -1,34 +1,63 @@
-version: '2'
-services:
-  frontend:
-    build: ./frontend
+  wloxdb:
+    image: gfts/mysqlwlox:0.2
     ports:
-     - "5000:80"
-    links:
-     - db
-    depends_on:
-     - api
-     - auth
-     - backstage2
-     - bitcoind
-     - db
-  api:
-    image: api/wlox
-  auth:
-    image: auth/wlox
-  backstage2:
-    image: backstage2/wlox
-  bitcoind:
-    image: bitcoind/wlox
-  db:
-    image: db/wlox
-    ports:
-     - "3306:3306"  
+      - "3308:3306"
+    volumes:
+      - /home/david/goldenfrogtech/wlox/db/data/mysql/3/:/var/lib/mysql
+      - /home/david/goldenfrogtech/wlox/db/data:/data
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=mysite
-      - MYSQL_USER=mysite
-      - MYSQL_PASSWORD=password
+      MYSQL_ROOT_PASSWORD: wloxroot
+      MYSQL_PASSWORD: wloxpass
+      MYSQL_DATABASE: wloxdb
 
 
 
+  wloxweb:
+    image: tutum/apache-php
+    links:
+      - wloxdb
+    ports:
+      - "8041:80"
+      - "8443:443"
+      - "8009:8000"
+    volumes:
+      - ~/goldenfrogtech/wlox/frontend/:/var/www/html/
+  
+  wloxapi:
+    image: tutum/apache-php
+    links:
+      - wloxdb
+    volumes:
+      - api/:./api
+
+  wloxauth:
+    image: tutum/apache-php
+    links:
+      - wloxdb
+    volumes:
+      - auth/:./auth
+
+  wloxcron:
+    image: tutum/apache-php
+    links:
+      - wloxdb
+    volumes:
+      - cron/:./cron
+
+
+  wloxbackend2:
+    image: tutum/apache-php
+    ports:
+      - "8042:80"
+      - "8444:443"
+    volumes:
+      - backend2/:./backend
+
+
+
+  wloxbtc:
+    image: bitcoind/wlox:0.1
+    ports:
+      - "8334:8332"
+    volumes:
+      - ./var/lib/bitcoind:/data/bitcoind
