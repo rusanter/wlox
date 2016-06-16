@@ -3,8 +3,8 @@
     ports:
       - "3308:3306"
     volumes:
-      - /home/david/goldenfrogtech/wlox/db/data/mysql/3/:/var/lib/mysql
-      - /home/david/goldenfrogtech/wlox/db/data:/data
+      - ./var/mysql:/var/lib/mysql
+      - /opt/var/data:/data
     environment:
       MYSQL_ROOT_PASSWORD: wloxroot
       MYSQL_PASSWORD: wloxpass
@@ -13,51 +13,69 @@
 
 
   wloxweb:
-    image: tutum/apache-php
+    image: phpwloxtest:1.0
     links:
       - wloxdb
     ports:
       - "8041:80"
       - "8443:443"
       - "8009:8000"
-    volumes:
-      - ~/goldenfrogtech/wlox/frontend/:/var/www/html/
-  
-  wloxapi:
-    image: tutum/apache-php
-    links:
-      - wloxdb
-    volumes:
-      - api/:./api
-
-  wloxauth:
-    image: tutum/apache-php
-    links:
-      - wloxdb
-    volumes:
-      - auth/:./auth
-
-  wloxcron:
-    image: tutum/apache-php
-    links:
-      - wloxdb
-    volumes:
-      - cron/:./cron
-
-
-  wloxbackend2:
-    image: tutum/apache-php
-    ports:
-      - "8042:80"
-      - "8444:443"
-    volumes:
-      - backend2/:./backend
-
+#    volumes:
+#      - ~/goldenfrogtech/wlox/frontend/:/var/www/html/
+#      - frontend/:/var/www/html/
 
 
   wloxbtc:
-    image: bitcoind/wlox:0.1
+    image: bitcoind:1.0
     ports:
-      - "8334:8332"
+      - "8332:8332"
     volumes:
-      - ./var/lib/bitcoind:/data/bitcoind
+      - ./var/lib/bitcoind:/home/test/.bitcoin/
+
+
+
+
+
+
+
+
+
+  
+#  wloxapi:
+#    image: tutum/apache-php
+#    links:
+#      - wloxdb
+#    volumes:
+#      - api/:./api
+
+#  wloxauth:
+#    image: tutum/apache-php
+#    links:
+#      - wloxdb
+#    volumes:
+#      - auth/:./auth
+
+#  wloxcron:
+#    image: tutum/apache-php
+#    links:
+#      - wloxdb
+#    volumes:
+#      - cron/:./cron
+
+
+#  wloxbackstage2:
+#    image: tutum/apache-php
+#    ports:
+#      - "8042:80"
+#      - "8444:443"
+#    volumes:
+#      - backstage2/:./backstage2
+
+
+
+#  wloxbtc:
+#    image: bitcoind/wlox:0.1
+#    ports:
+#      - "8334:8332"
+#    volumes:
+#      - ./var/lib/bitcoind:/data/bitcoind
