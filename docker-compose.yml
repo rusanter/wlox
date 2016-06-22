@@ -1,6 +1,9 @@
+#plataforma de wlox
+
+
+
     db:
-#   image: gfts/mysqlwlox:0.2
-    build: db/
+    build: ./db/Dockerfile
     ports:
       - "3307:3306"
     volumes:
@@ -14,8 +17,7 @@
 
 # aqui estoy probando adentro el api auth y cron 
   frontend:
-#   image: phpwloxtest:1.0
-    build: frontend/
+    build: ./frontend/Dockerfile
     links:
       - db
     ports:
@@ -27,8 +29,7 @@
 
 #backstage aparte 
   wloxbackstage2:
-#   image: tutum/apache-php
-    build: backstage2/
+    build: ./backstage2/Dockerfile
     links:
       - frontend
       - db:wloxdb
@@ -41,7 +42,9 @@
 
 
 
-
+#   image: gfts/mysqlwlox:0.2
+#   image: tutum/apache-php
+#   image: phpwloxtest:1.0
 
 # haciendo prueba con este aparte 
 #    btc:
