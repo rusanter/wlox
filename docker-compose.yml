@@ -1,43 +1,46 @@
 #plataforma de wlox
 
 
+db:
+  build: db/
+  ports:
+    - 3307:3306
+  volumes:
+    - ./var/mysql:/var/lib/mysql
+    - ./var/data:/data
+  environment:
+     MYSQL_ROOT_PASSWORD: wloxroot
+     MYSQL_PASSWORD: wloxpass
+     MYSQL_DATABASE: wloxdb
 
-    db:
-    build: ./db/Dockerfile
-    ports:
-      - "3307:3306"
-    volumes:
-      - ./var/mysql:/var/lib/mysql
-      - ./var/data:/data
-    environment:
-      MYSQL_ROOT_PASSWORD: wloxroot
-      MYSQL_PASSWORD: wloxpass
-      MYSQL_DATABASE: wloxdb
 
 
 # aqui estoy probando adentro el api auth y cron 
-  frontend:
-    build: ./frontend/Dockerfile
-    links:
-      - db
-    ports:
-      - "8080:80"
-#    volumes:
-#      - ~/goldenfrogtech/wlox/frontend/:/opt/wlox/frontend/htdocs/
-#      - frontend/:/opt/wlox/frontend/htdocs/
+frontend:
+  build: frontend/
+  links:
+    - db
+  ports:
+    - 8080:80
+#volumes:
+#  - ~/goldenfrogtech/wlox/frontend/:/opt/wlox/frontend/htdocs/
+#  - frontend/:/opt/wlox/frontend/htdocs/
 
 
 #backstage aparte 
-  wloxbackstage2:
-    build: ./backstage2/Dockerfile
-    links:
-      - frontend
-      - db:wloxdb
-    ports:
-      - "8042:80"
-      - "8444:443"
-    volumes:
-      - backstage2/:/opt/wlox/backstage2/
+wloxbackstage2:
+  build: backstage2/
+  links:
+    - frontend
+    - db:wloxdb
+  ports:
+    - "8042:80"
+    - "8444:443"
+  volumes:
+    - backstage2/:/opt/wlox/backstage2/
+
+
+
 
 
 
