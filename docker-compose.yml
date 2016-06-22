@@ -1,10 +1,11 @@
-  wloxdb:
-    image: gfts/mysqlwlox:0.2
+    db:
+   #image: gfts/mysqlwlox:0.2
+    build: db/
     ports:
       - "3308:3306"
     volumes:
       - ./var/mysql:/var/lib/mysql
-      - /opt/var/data:/data
+      - ./var/data:/data
     environment:
       MYSQL_ROOT_PASSWORD: wloxroot
       MYSQL_PASSWORD: wloxpass
@@ -12,10 +13,11 @@
 
 
 
-  wloxweb:
-    image: phpwloxtest:1.0
+  frontend:
+   #image: phpwloxtest:1.0
+    build: frontend/
     links:
-      - wloxdb
+      - db
     ports:
       - "8041:80"
       - "8443:443"
@@ -24,13 +26,31 @@
 #      - ~/goldenfrogtech/wlox/frontend/:/var/www/html/
 #      - frontend/:/var/www/html/
 
-
-  wloxbtc:
-    image: bitcoind:1.0
+  wloxbackstage2:
+#    image: tutum/apache-php
+    build: backstage2/
+    links:
+      - frontend
+      - db:wloxdb
     ports:
-      - "8332:8332"
+      - "8042:80"
+      - "8444:443"
     volumes:
-      - ./var/lib/bitcoind:/home/test/.bitcoin/
+      - backstage2/:./backstage2
+
+
+
+
+
+
+
+
+#    btc:
+#    image: bitcoind:1.0
+#    ports:
+#      - "8332:8332"
+#    volumes:
+#      - ./var/lib/bitcoind:/home/test/.bitcoin/
 
 
 
