@@ -23,8 +23,8 @@
       - "8443:443"
       - "8009:8000"
 #    volumes:
-#      - ~/goldenfrogtech/wlox/frontend/:/var/www/html/
-#      - frontend/:/var/www/html/
+#      - ~/goldenfrogtech/wlox/frontend/:/opt/wlox/frontend/htdocs/
+#      - frontend/:/opt/wlox/frontend/htdocs/
 
   wloxbackstage2:
 #    image: tutum/apache-php
@@ -36,8 +36,7 @@
       - "8042:80"
       - "8444:443"
     volumes:
-      - backstage2/:./backstage2
-
+      - backstage2/:/opt/wlox/backstage2/
 
 
 
