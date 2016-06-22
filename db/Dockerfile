@@ -16,6 +16,8 @@ RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysq
 
 # Install database
 ADD ./wlox.sql /docker-entrypoint-initdb.d/wlox.sql
+ADD ./dump.sh  /docker-entrypoint-initdb.d/dump.sh
+
 
 ENV DB_NAME=wloxdb
 ENV DB_USER=wloxuser
@@ -24,4 +26,6 @@ ENV DB_REMOTE_ROOT_NAME=root
 ENV DB_REMOTE_ROOT_PASS=root
 
 WORKDIR /docker-entrypoint-initdb.d/
-RUN dump mysql -uroot -proot < wlox.sql
+
+ENTRYPOINT ["/docker-entrypoint-initdb.d/dump.sh"]
+
