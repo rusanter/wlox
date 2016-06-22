@@ -129,9 +129,12 @@ class User {
 			API::send();
 			
 			$lang = $_SESSION['language'];
-			unset($_SESSION);
+			
+            session_start();
 			session_destroy();
-			session_start();
+            unset($_SESSION);
+            session_regenerate_id(true);
+			
 			$_SESSION['language'] = $lang;
 			
 			self::$logged_in = false;
@@ -156,7 +159,7 @@ class User {
 		
 		if (!$response || !is_array($response))
 			Errors::add(Lang::string('security-com-error'));
-		elseif ($response['success'] === false)
+		elseif ($response['success'] == false)
 			Errors::merge($response['errors']);
 		else {
 			return true;
