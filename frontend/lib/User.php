@@ -70,6 +70,7 @@ class User {
 		else {
 			self::$info = $result['info'];
 			self::$logged_in = true;
+            $logout = 0;
 			//self::updateNonce();
 			return true;
 		}
@@ -124,22 +125,27 @@ class User {
 	}
 	
 	static function logOut($logout) {
-		if ($logout && $_REQUEST['uniq'] == $_SESSION["logout_uniq"]) {
+		  if ($_REQUEST['uniq'] == $_SESSION["logout_uniq"]) {
+              
 			API::add('User','logOut',array($_SESSION['session_id']));
 			API::send();
 			
 			$lang = $_SESSION['language'];
 			
             session_start();
-			session_destroy();
             unset($_SESSION);
-            session_regenerate_id(true);
+			session_destroy();
+            
+            
+           /* session_regenerate_id(true);*/
 			
 			$_SESSION['language'] = $lang;
 			
 			self::$logged_in = false;
 			self::$info = false;
-		}
+              
+			}
+        
 	}
 	
 	static function updateNonce() {
