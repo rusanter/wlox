@@ -20,15 +20,12 @@ ENV dbpass=wloxpass
 
 
 
-
-
-
 #directorio
 WORKDIR /opt/wlox/backstage2/
 
-ADD . /var/www/wlox/backstage2/
+ADD . /opt/wlox/backstage2/
 
-RUN mv -v cfg.php.example cfg.php
+RUN mv cfg.php.example cfg.php
 
 
 

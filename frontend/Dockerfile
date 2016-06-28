@@ -34,8 +34,8 @@ RUN mv -v cfg/cfg.php.example cfg/cfg.php
 
 
 #Virtualhost configs
-WORKDIR /etc/apache2/
-COPY ../etc/apache2.conf.example /etc/apache2/apache2.conf
+#WORKDIR /etc/apache2/
+#ADD ../etc/apache2.conf.example /etc/apache2/apache2.conf
 
 
 

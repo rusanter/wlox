@@ -32,7 +32,7 @@ wloxbackstage2:
   build: backstage2/
   links:
     - frontend
-    - db:wloxdb
+    - db
   ports:
     - "8042:80"
     - "8444:443"
@@ -50,12 +50,12 @@ wloxbackstage2:
 #   image: phpwloxtest:1.0
 
 # haciendo prueba con este aparte 
-#    btc:
-#    image: bitcoind:1.0
-#    ports:
-#      - "8332:8332"
-#    volumes:
-#      - ./var/lib/bitcoind:/home/test/.bitcoin/
+btc:
+  build: bitcoind/
+  ports:
+    - "8332:8332"
+  volumes:
+    - ./var/lib/bitcoind:/home/root/.bitcoin/
 
 
 
