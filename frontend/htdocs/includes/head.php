@@ -85,7 +85,7 @@
 <input type="hidden" id="javascript_mon_10" value="<?= Lang::string('nov') ?>" />
 <input type="hidden" id="javascript_mon_11" value="<?= Lang::string('dec') ?>" />
 <input type="hidden" id="gmt_offset" value="<?= $CFG->timezone_offset ?>" />
-<input type="hidden" id="is_logged_in" value="<?= User::isLoggedIn() ?>" />
+<input type="hidden" id="is_logged_in" value="<?= User::isLoggedIn()  ?>" />
 <input type="hidden" id="cfg_orders_edit" value="<?= Lang::string('orders-edit') ?>" />
 <input type="hidden" id="cfg_orders_delete" value="<?= Lang::string('orders-delete') ?>" />
 <input type="hidden" id="cfg_user_id" value="<?= (User::isLoggedIn()) ? User::$info['user'] : '0' ?>" />
@@ -122,16 +122,18 @@
             </ul>
         
             <ul class="tci_list">
-                <? if (!User::isLoggedIn()) { ?>
+                <?php if (!User::isLoggedIn()) { ?>
                 <li>
                     <div class="navbar-brand" href="login.php">
                       <a href="login.php">
                          <img src="images/elements/icon-login.svg" alt="icon wallet" height="33" width="33">
+                          
                       </a>
                     </div>
                     <div class="navbar-brand marg" href="login.php">
                       <a href="login.php">
-                        <span> <?= Lang::string('home-login') ?></span>
+                        <span> <?= Lang::string('home-login') ?></span
+                            
                         </a>
                     </div>
                 </li>
@@ -148,12 +150,22 @@
                         </a>
                     </div>
                 </li>
-                <? } else { ?>
+                <?php } elseif (User::isLoggedIn()) {
+                        ?>
                 <li>
-                    <div class="navbar-brand" href="account.php">
-                        <i class="fa fa-user"></i> <?= User::$info['user'] ?></div>  
-                    <div class="navbar-brand" href="logout.php?log_out=1&uniq=<?= $_SESSION["logout_uniq"] ?>">
-                        <i class="fa fa-unlock"></i> <?= Lang::string('log-out') ?></div></li>
+                    <div class="navbar-brand" style="line-height:35px" href="account.php">
+                        <a  href="account.php">
+                          <i class="fa fa-user"></i> <?= User::$info['user'] ?>
+                        </a>
+                    </div> 
+                </li>
+                <li>
+                    <div class="navbar-brand" style="line-height:35px" href="logout.php?log_out=1&uniq=<?= $_SESSION["logout_uniq"] ?>">
+                       <a href="logout.php?log_out=1&uniq=<?= $_SESSION["logout_uniq"] ?>">
+                        <i class="fa fa-unlock"></i> <?= Lang::string('log-out') ?>
+                       </a>
+                    </div>
+                </li>
                 <? } ?>
                 <li class="empty margin-left">
                 	<label for="language_selector"><img src="images/<?= $CFG->language ?>.png" /></label>
