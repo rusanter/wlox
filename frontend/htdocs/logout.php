@@ -1,8 +1,8 @@
 <?php
 include '../lib/common.php';
 
-if (!$_REQUEST['log_out'])
-	Link::redirect('index.php');
+if ($_REQUEST['log_out'])
+	/*Link::redirect('index.php');*/
 
 API::add('Content','getRecord',array('logged-out'));
 $query = API::send();
