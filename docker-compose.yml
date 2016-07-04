@@ -1,10 +1,10 @@
 #plataforma de wlox
 
-
+#database
 db:
-  build: db/
+  image: sameersbn/mysql
   ports:
-    - 3307:3306
+    - 3306:3306
   volumes:
     - ./var/mysql:/var/lib/mysql
     - ./var/data:/data
@@ -15,78 +15,31 @@ db:
 
 
 
-# aqui estoy probando adentro el api auth y cron 
+# Frontend 
 frontend:
   build: frontend/
   links:
     - db
   ports:
     - 8080:80
-#volumes:
-#  - ~/goldenfrogtech/wlox/frontend/:/opt/wlox/frontend/htdocs/
-#  - frontend/:/opt/wlox/frontend/htdocs/
+
+#backstage2
+#backstage2:
+#  build: backstage2/
+#  ports:
+#    - "8042:80"
+#    - "8444:443"
+#  volumes:
+#    - backstage2/:/opt/wlox/backstage2/
 
 
-#backstage aparte 
-wloxbackstage2:
-  build: backstage2/
-  links:
-    - frontend
-    - db
-  ports:
-    - "8042:80"
-    - "8444:443"
-  volumes:
-    - backstage2/:/opt/wlox/backstage2/
-
-
-
-
-
-
-
-#   image: gfts/mysqlwlox:0.2
-#   image: tutum/apache-php
-#   image: phpwloxtest:1.0
-
-# haciendo prueba con este aparte 
+# bitcoind
 btc:
   build: bitcoind/
   ports:
     - "8332:8332"
   volumes:
-    - ./var/lib/bitcoind:/home/root/.bitcoin/
+    - ./var/lib/bitcoind:/root/.bitcoin/testnet3/
 
 
 
-
-
-
-
-
-
-#enpruebas
-#  wloxapi:
-#    image: tutum/apache-php
-#    links:
-#      - wloxdb
-#    volumes:
-#      - api/:./api
-
-
-#enpruebas
-#  wloxauth:
-#    image: tutum/apache-php
-#    links:
-#      - wloxdb
-#    volumes:
-#      - auth/:./auth
-
-
-#enpruebas
-#  wloxcron:
-#    image: tutum/apache-php
-#    links:
-#      - wloxdb
-#    volumes:
-#      - cron/:./cron
