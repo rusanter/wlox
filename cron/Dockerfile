@@ -1,29 +1,30 @@
-FROM php/wlox
-MAINTAINER David Rodriguez <david@goldenfrogtech.com>
+FROM php:5.6-cli
+MAINTAINER Jim Phillips <jim.phillips@goldenfrogtech.com>
 
-ENV dbhost=
-ENV dbname=wloxdb
-ENV dbuser=wloxuser
-ENV dbpass=wloxpass
+# Update APT
+RUN apt-get update
 
-ENV DB_NAME=wloxdb
-ENV DB_USER=wloxuser
-ENV DB_PASS=wloxpass
-ENV DB_REMOTE_ROOT_NAME=root
-ENV DB_REMOTE_ROOT_PASS=root
+# Prepare PHP5
+RUN apt-get install -y openssl libcurl4-openssl-dev libgd-dev libmcrypt-dev \
+    && docker-php-ext-install curl gd mcrypt json pdo_mysql
 
+# Install Cron
+RUN apt-get install -y cron
 
+# Create App Directory
+WORKDIR /app
+ADD . /app
 
+# Install Configurations
+COPY docker_cfg.php cfg.php
+COPY crontab /etc/cron.d/wlox
 
+# Set things up for Cron
+RUN chmod 0644 /etc/cron.d/wlox
+RUN crontab /etc/cron.d/wlox
+RUN touch /var/log/cron.log
 
+# Connect Wallet Transaction
+VOLUME /app/transactions
 
-
-#directorio
-WORKDIR /opt/wlox/cron/
-
-ADD . /var/www/wlox/cron/
-
-RUN mv -v cfg.php.example cfg.php
-
-
-
+CMD cron && tail -f /var/log/cron.log
