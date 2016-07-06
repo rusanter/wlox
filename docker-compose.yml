@@ -23,6 +23,14 @@ frontend:
   ports:
     - 8080:80
 
+# API 
+api:
+  build: api/
+  links:
+    - db
+  ports:
+    - 8085:80
+
 #backstage2
 #backstage2:
 #  build: backstage2/
@@ -39,7 +47,7 @@ btc:
   ports:
     - "8332:8332"
   volumes:
-    - ./var/lib/bitcoind:/root/.bitcoin/testnet3/
-
+    - ./var/lib/bitcoind:/data
+    - ./var/lib/bitcoind/notify:/notify
 
 
