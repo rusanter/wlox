@@ -433,10 +433,10 @@ CREATE TABLE `app_configuration` (
   `orders_min_usd` varchar(255) NOT NULL DEFAULT '5',
   `bitcoin_sending_fee` varchar(255) NOT NULL DEFAULT '0.0001',
   `frontend_baseurl` varchar(255) NOT NULL,
-  `frontend_dirroot` varchar(255) NOT NULL,
+  `frontend_dirroot` varchar(255) NOT NULL DEFAULT '/app/',
   `fiat_withdraw_fee` varchar(255) NOT NULL,
   `api_db_debug` enum('Y','N') NOT NULL DEFAULT 'Y',
-  `api_dirroot` varchar(255) NOT NULL,
+  `api_dirroot` varchar(255) NOT NULL DEFAULT '/app',
   `support_email` varchar(255) NOT NULL,
   `email_smtp_host` varchar(255) NOT NULL,
   `email_smtp_port` varchar(255) NOT NULL DEFAULT '465',
@@ -486,9 +486,9 @@ CREATE TABLE `app_configuration` (
   `bitcoin_warm_wallet_address` varchar(255) NOT NULL,
   `cron_db_debug` enum('Y','N') NOT NULL DEFAULT 'Y',
   `quandl_api_key` varchar(255) NOT NULL,
-  `cron_dirroot` varchar(255) NOT NULL,
+  `cron_dirroot` varchar(255) NOT NULL DEFAULT '/app/',
   `backstage_db_debug` enum('Y','N') NOT NULL DEFAULT 'Y',
-  `backstage_dirroot` varchar(255) NOT NULL,
+  `backstage_dirroot` varchar(255) NOT NULL DEFAULT '/app',
   `email_notify_fiat_withdrawals` enum('Y','N') NOT NULL DEFAULT 'Y',
   `contact_email` varchar(255) NOT NULL,
   `cloudflare_api_key` varchar(255) NOT NULL,
@@ -1656,7 +1656,7 @@ CREATE TABLE `status` (
 
 LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
-INSERT INTO `status` VALUES (1,'2015-06-19 12:21:00',0.00000000,0.00000000,0.00000000,0.00000000,0.00000000,0.00000000,'1.13.8','2015-06-18 20:00:00','2015-06-19 12:20:00','2015-06-19 12:20:00','2015-05-31 19:00:00','2015-06-19 12:21:00','2015-06-19 12:21:00',0.00,'N');
+INSERT INTO `status` VALUES (1,'2015-06-19 12:21:00',0.00000000,0.00000000,0.00000000,0.00000000,0.00000000,0.00000000,'1.13.9','2015-06-18 20:00:00','2015-06-19 12:20:00','2015-06-19 12:20:00','2015-05-31 19:00:00','2015-06-19 12:21:00','2015-06-19 12:21:00',0.00,'N');
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 
