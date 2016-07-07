@@ -17,14 +17,8 @@ ADD . /app
 
 # Install Configurations
 COPY docker_cfg.php cfg.php
-COPY crontab /etc/cron.d/wlox
-
-# Set things up for Cron
-RUN chmod 0644 /etc/cron.d/wlox
-RUN crontab /etc/cron.d/wlox
-RUN touch /var/log/cron.log
 
 # Connect Wallet Transaction
 VOLUME /app/transactions
 
-CMD cron && tail -f /var/log/cron.log
+CMD ["/app/start"]
