@@ -32,13 +32,15 @@ api:
     - 8085:80
 
 #backstage2
-#backstage2:
-#  build: backstage2/
-#  ports:
-#    - "8042:80"
-#    - "8444:443"
-#  volumes:
-#    - backstage2/:/opt/wlox/backstage2/
+backstage2:
+  build: backstage2/
+  links:
+    - db
+  ports:
+    - "8042:80"
+    - "8444:443"
+  volumes:
+    - ./var/backstage2:/opt/wlox/backstage2/
 
 
 # bitcoind
