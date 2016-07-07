@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # prepend application environment variables to crontab
-env | egrep '^db' | cat - crontab > /etc/cron.d/wlox
+env | egrep '^db'  > /etc/cron.d/wlox
+env | egrep '^PATH' >> /etc/cron.d/wlox
+cat crontab >> /etc/cron.d/wlox
 crontab /etc/cron.d/wlox
 
 # Run cron deamon
