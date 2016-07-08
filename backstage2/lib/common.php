@@ -1,5 +1,5 @@
 <?php 
-require_once ("../etc/cfg.php");
+require_once ("cfg.php");
 require_once ("shared2/autoload.php");
 
 /* connect to the database */
