@@ -2,34 +2,54 @@
 
 #database
 db:
-  image: sameersbn/mysql
+  build: db/
   ports:
-    - 3306:3306
+    - 3306
   volumes:
     - ./var/mysql:/var/lib/mysql
-    - ./var/data:/data
-  environment:
-     MYSQL_ROOT_PASSWORD: wloxroot
-     MYSQL_PASSWORD: wloxpass
-     MYSQL_DATABASE: wloxdb
 
+# bitcoind
+wallet:
+  image: gcr.io/gfts-wlox/bitcoin-classic
+  ports:
+    - 8332
+  volumes:
+    - ./var/wallet/data:/data
+    - ./var/wallet/notify:/notify
 
-
-# Frontend 
-frontend:
-  build: frontend/
+# cron
+cron:
+  build: cron/
   links:
     - db
-  ports:
-    - 8080:80
+  volumes:
+    - ./var/wallet/notify:/notify
 
 # API 
 api:
   build: api/
   links:
     - db
+    - wallet
   ports:
-    - 8085:80
+    - 80
+
+# Auth 
+auth:
+  build: auth/
+  links:
+    - db
+  ports:
+    - 80
+
+# Frontend 
+frontend:
+  build: frontend/
+  links:
+    - api
+    - auth
+  ports:
+    - 38080:80
 
 #backstage2
 backstage2:
@@ -37,19 +57,5 @@ backstage2:
   links:
     - db
   ports:
-    - "8042:80"
-    - "8444:443"
-  volumes:
-    - ./var/backstage2:/opt/wlox/backstage2/
-
-
-# bitcoind
-btc:
-  build: bitcoind/
-  ports:
-    - "8332:8332"
-  volumes:
-    - ./var/lib/bitcoind:/data
-    - ./var/lib/bitcoind/notify:/notify
-
+    - 48080:80
 

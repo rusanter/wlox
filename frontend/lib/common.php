@@ -1,6 +1,6 @@
 <?php 
 /* Load Libraries */
-include '../../etc/cfg.php';
+include '../cfg.php';
 include 'stdlib.php';
 include 'session.php';
 include 'autoload.php';
