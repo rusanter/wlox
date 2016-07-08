@@ -1,7 +1,8 @@
 FROM  mysql:5.7
 
 # Install database
-ADD ./wlox.sql /docker-entrypoint-initdb.d/wlox.sql
+ADD ./wlox.sql /docker-entrypoint-initdb.d/01_wlox.sql
+ADD ./docker.sql /docker-entrypoint-initdb.d/02_docker.sql
 
 ENV MYSQL_RANDOM_ROOT_PASSWORD=yes
 ENV MYSQL_DATABASE=wlox
