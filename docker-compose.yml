@@ -1,0 +1,45 @@
+#plataforma de wlox
+
+#database
+db:
+  image: sameersbn/mysql
+  ports:
+    - 3306:3306
+  volumes:
+    - ./var/mysql:/var/lib/mysql
+    - ./var/data:/data
+  environment:
+     MYSQL_ROOT_PASSWORD: wloxroot
+     MYSQL_PASSWORD: wloxpass
+     MYSQL_DATABASE: wloxdb
+
+
+
+# Frontend 
+frontend:
+  build: frontend/
+  links:
+    - db
+  ports:
+    - 8080:80
+
+#backstage2
+#backstage2:
+#  build: backstage2/
+#  ports:
+#    - "8042:80"
+#    - "8444:443"
+#  volumes:
+#    - backstage2/:/opt/wlox/backstage2/
+
+
+# bitcoind
+btc:
+  build: bitcoind/
+  ports:
+    - "8332:8332"
+  volumes:
+    - ./var/lib/bitcoind:/root/.bitcoin/testnet3/
+
+
+

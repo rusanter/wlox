@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# prepend application environment variables to crontab
+env | egrep '^db'  > /etc/cron.d/wlox
+env | egrep '^PATH' >> /etc/cron.d/wlox
+cat crontab >> /etc/cron.d/wlox
+crontab /etc/cron.d/wlox
+
+# Run cron deamon
+# -m off : sending mail is off 
+# tail makes the output to cron.log viewable with the $(docker logs container_id) command
+touch /var/log/cron.log
+cron  && tail -f /var/log/cron.log
