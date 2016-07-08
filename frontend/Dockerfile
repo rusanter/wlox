@@ -43,7 +43,7 @@ ENV DB_REMOTE_ROOT_PASS=root
 
 #Virtualhost configs
 WORKDIR /etc/apache2/
-COPY apache2.conf.example /etc/apache2/sites-available/000-default.conf
+ADD 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 
 # Add image configuration and scripts
@@ -54,9 +54,9 @@ RUN chmod 755 /*.sh
 RUN mkdir -p /opt/wlox/frontend/htdocs/ && rm -fr /var/www/html && ln -s /opt/wlox/frontend/htdocs/ /var/www/html
 WORKDIR /opt/wlox/frontend/htdocs
 ADD . /opt/wlox/frontend/
-COPY cfg/cfg.php.example cfg/cfg.php
+
 #change cfg
-#RUN mv -v cfg/cfg.php.example cfg/cfg.php
+RUN mv -v ../cfg/cfg.php.example ../cfg/cfg.php
 
 EXPOSE 80
 CMD ["/run.sh"]

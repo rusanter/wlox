@@ -1,4 +1,3 @@
-#FROM php/wlox
 FROM tutum/apache-php
 MAINTAINER David Rodriguez <david@goldenfrogtech.com>
 
