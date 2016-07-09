@@ -1,55 +1,20 @@
-FROM debian:jessie
-MAINTAINER David Rodriguez <david@goldenfrogtech.com>
+FROM php:5.6-apache
+MAINTAINER Jim Phillips <jim.phillips@goldenfrogtech.com>
 
-RUN apt-get update && apt-get -y install apache2 curl \
-        libapache2-mod-php5 \
-        php5-mysql \
-        php5-mcrypt \
-        php5-gd \
-        php5-curl \
-        php-pear \
-        vim \
-        git \
-        php-apc && \
-        apt-get clean && rm -rf /var/lib/apt/lists/*
+# Update APT
+RUN apt-get update
 
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR /var/log/apache2
+# Prepare PHP5
+RUN apt-get install -y openssl libcurl4-openssl-dev libgd-dev libmcrypt-dev \
+    && docker-php-ext-install curl gd mcrypt json mysql pdo_mysql
 
-#habilitar el virtualhost
-COPY api-default.conf /etc/apache2/sites-available/000-default.conf
-COPY api-default.conf /etc/apache2/sites-enable/000-default.conf
-#RUN /usr/sbin/a2ensite api-default
+# Enable Rewrite
+RUN a2enmod rewrite
 
+# Create App Directory
+WORKDIR /var/www/html
+ADD . /var/www
+RUN rmdir /var/www/html && mv -f /var/www/htdocs /var/www/html
 
-#usando ssl
-#RUN /usr/sbin/a2ensite default-ssl
-#RUN /usr/sbin/a2enmod ssl
-
-
-
-#Environment
-
-ENV dbhost=dbwlox
-ENV dbname=wloxdb
-ENV dbuser=wloxuser
-ENV dbpass=wloxpass
-
-
-#directorio
-WORKDIR /opt/wlox/api/htdocs/
-
-ADD . /opt/wlox/api/
-
-#Renombrando configuracion
-RUN mv -v ../cfg/cfg.php.example ../cfg/cfg.php
-
-
-
-EXPOSE 80
-EXPOSE 443
-
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-
-
+COPY docker_php.ini /usr/local/etc/php/php.ini
+COPY docker_cfg.php /var/www/cfg.php

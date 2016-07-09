@@ -1,4 +1,2 @@
-/README.md~
-./var
-./db/data
+var/
 *.old

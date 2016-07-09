@@ -1,26 +1,20 @@
-FROM php/wlox
-MAINTAINER David Rodriguez <david@goldenfrogtech.com>
+FROM php:5.6-apache
+MAINTAINER Jim Phillips <jim.phillips@goldenfrogtech.com>
 
+# Update APT
+RUN apt-get update
 
+# Prepare PHP5
+RUN apt-get install -y openssl libcurl4-openssl-dev libgd-dev libmcrypt-dev \
+    && docker-php-ext-install curl gd mcrypt json mysql pdo_mysql
 
-ENV DB_USER=wloxuser
-ENV DB_PASS=wloxpass
-ENV DB_REMOTE_ROOT_NAME=root
-ENV DB_REMOTE_ROOT_PASS=root
+# Enable Rewrite
+RUN a2enmod rewrite
 
-ENV dbhost=db-wlox
-ENV dbname=wloxdb
-ENV dbuser=wloxuser
-ENV dbpass=wloxpass
+# Create App Directory
+WORKDIR /var/www/html
+ADD . /var/www
+RUN rmdir /var/www/html && mv -f /var/www/htdocs /var/www/html
 
-
-
-#directorio
-WORKDIR /opt/wlox/auth/htdocs/
-
-ADD . /var/www/html/ 
-
-RUN mv -v cfg.php.example cfg.php
-
-
-
+COPY docker_php.ini /usr/local/etc/php/php.ini
+COPY docker_cfg.php /var/www/cfg.php

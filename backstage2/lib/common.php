@@ -6,7 +6,7 @@ require_once ("shared2/autoload.php");
 db_connect ( $CFG->dbhost, $CFG->dbname, $CFG->dbuser, $CFG->dbpass );
 mysql_set_charset('utf8');
 session_start();
-session_regenerate_id();
+//session_regenerate_id();
 
 Settings::assign ($CFG);
 Settings::importTable('app_configuration');

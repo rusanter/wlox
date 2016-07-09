@@ -1,5 +1,5 @@
 <?php
-include "../../etc/cfg.php";
+include "../cfg.php";
 include "dblib.php";
 include "stdlib.php";
 include "Google2FA.php";
