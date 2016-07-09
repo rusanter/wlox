@@ -45,7 +45,7 @@ header('X-Powered-By: WLOX');
 /* Readonly Sessions */
 if (empty($ajax)) {
 	session_start();
-	session_regenerate();
+//	session_regenerate();
 }
 else {
 	session_readonly();
