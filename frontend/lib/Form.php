@@ -840,10 +840,6 @@ class Form {
 	function reCaptchaCheck($force=false) {
 		global $CFG;
         
-        /*prueba*/
-        $CFG->google_recaptch_api_key = '6LekASQTAAAAAN_ndN2RU9xalMg7VUFG8CqfYtuZ';
-        $CFG->google_recaptch_api_secret = '6LekASQTAAAAALLTxe2atRJKPgoP2caY4YZ8U2Yu';
-		
 		if (empty($CFG->google_recaptch_api_key) || empty($CFG->google_recaptch_api_secret) || (empty($this->info) && !$force))
 			return false; 
 		
