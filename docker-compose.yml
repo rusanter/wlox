@@ -1,0 +1,61 @@
+#plataforma de wlox
+
+#database
+db:
+  build: db/
+  ports:
+    - 3306
+  volumes:
+    - ./var/mysql:/var/lib/mysql
+
+# bitcoind
+wallet:
+  image: gcr.io/gfts-wlox/bitcoin-classic
+  ports:
+    - 8332
+  volumes:
+    - ./var/wallet/data:/data
+    - ./var/wallet/notify:/notify
+
+# cron
+cron:
+  build: cron/
+  links:
+    - db
+  volumes:
+    - ./var/wallet/notify:/notify
+
+# API 
+api:
+  build: api/
+  links:
+    - db
+    - wallet
+  ports:
+    - 80
+
+# Auth 
+auth:
+  build: auth/
+  links:
+    - db
+  ports:
+    - 80
+
+# Frontend 
+frontend:
+  build: frontend/
+  links:
+    - api
+    - auth
+  ports:
+    - 38080:80
+
+#backstage2
+backstage2:
+  build: backstage2/
+  links:
+    - db
+  ports:
+    - 48080:80
+
