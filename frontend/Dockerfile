@@ -5,7 +5,8 @@ MAINTAINER Jim Phillips <jim.phillips@goldenfrogtech.com>
 RUN apt-get update
 
 # Prepare PHP5
-RUN apt-get install -y openssl libcurl4-openssl-dev libgd-dev libmcrypt-dev \
+RUN apt-get install -y openssl libcurl4-openssl-dev libgd-dev libmcrypt-dev libfreetype6-dev libjpeg62-turbo-dev libpng12-dev \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install curl gd mcrypt json mysql pdo_mysql
 
 # Enable Rewrite
