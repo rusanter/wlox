@@ -1,0 +1,6 @@
+0 0 * * *       php /app/daily_stats.php >> /var/log/cron.log 2>&1
+0-59/10 * * * * php /app/get_stats.php >> /var/log/cron.log 2>&1
+0-59/5 * * * *  php /app/maintenance.php >> /var/log/cron.log 2>&1
+0 0 1 * *       php /app/monthly_stats.php >> /var/log/cron.log 2>&1
+* * * * *       sh /app/process_bitcoin.sh >> /var/log/cron.log 2>&1
+

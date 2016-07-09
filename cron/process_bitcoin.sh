@@ -1,6 +1,8 @@
 #!/bin/sh
 
+PHP=/usr/local/bin/php
 DIR=$(cd "$( dirname "$0" )" && pwd)
 
-${DIR}/receive_bitcoin.php
-${DIR}/send_bitcoin.php
+cd ${DIR}
+${PHP} receive_bitcoin.php
+${PHP} send_bitcoin.php

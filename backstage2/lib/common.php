@@ -1,12 +1,12 @@
 <?php 
-require_once ("../etc/cfg.php");
+require_once ("cfg.php");
 require_once ("shared2/autoload.php");
 
 /* connect to the database */
 db_connect ( $CFG->dbhost, $CFG->dbname, $CFG->dbuser, $CFG->dbpass );
 mysql_set_charset('utf8');
 session_start();
-session_regenerate_id();
+//session_regenerate_id();
 
 Settings::assign ($CFG);
 Settings::importTable('app_configuration');

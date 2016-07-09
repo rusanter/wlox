@@ -1,6 +1,6 @@
 <?php 
 
-include '../../etc/cfg.php';
+include '../cfg.php';
 include '../lib/dblib.php';
 include '../lib/stdlib.php';
 include '../lib/autoload.php';

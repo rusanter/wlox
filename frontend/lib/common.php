@@ -1,6 +1,6 @@
 <?php 
 /* Load Libraries */
-include '../../etc/cfg.php';
+include '../cfg.php';
 include 'stdlib.php';
 include 'session.php';
 include 'autoload.php';
@@ -45,8 +45,7 @@ header('X-Powered-By: WLOX');
 /* Readonly Sessions */
 if (empty($ajax)) {
 	session_start();
-    
-	/*session_regenerate(); test*/
+//	session_regenerate();
 }
 else {
 	session_readonly();

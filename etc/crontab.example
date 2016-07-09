@@ -1,0 +1,11 @@
+
+
+
+
+#crontab wlox
+
+0 0  * * *  root /opt/wlox/wlox/cron/daily_stats.php
+*/10 * * * *  root /opt/wlox/wlox/cron/get_stats.php
+*/5 * * * *   root /opt/wlox/wlox/cron/maintenance.php
+0 0 1 * *   root /opt/wlox/wlox/cron/monthly_stats.php
+*/1 * * * *   root /opt/wlox/wlox/cron/process_bitcoin.sh
