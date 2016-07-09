@@ -41,8 +41,8 @@
              	<li><a href="<?= Lang::url('about.php') ?>"><?= Lang::string('about') ?></a></li>
                 <li class="divider"></li>
              	<li><a href="<?= Lang::url('our-security.php') ?>"><?= Lang::string('our-security') ?></a></li>
-                <li class="divider"></li>
-             	<li><a href="blog.php"><?= Lang::string('blog') ?></a></li>
+                <!--<li class="divider"></li>
+             	<li><a href="blog.php"><?= Lang::string('blog') ?></a></li>-->
                 <li class="divider"></li>
              	<li><a href="<?= Lang::url('press-releases.php') ?>"><?= Lang::string('news') ?></a></li>
                 <li class="divider"></li>
