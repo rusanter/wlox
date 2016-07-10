@@ -31,7 +31,7 @@
     
     <!-- ######### CSS STYLES ######### -->
 	<!--<link rel="stylesheet" href="css/style.css?v=20150625" type="text/css" />-->
-    <link rel="stylesheet" href="css/style.css?v=20150666" type="text/css" />  
+    <link rel="stylesheet" href="css/style.css?v=20150667" type="text/css" />  
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     
     <!-- responsive devices styles -->
