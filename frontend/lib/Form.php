@@ -45,9 +45,6 @@ class Form {
 		$this->verify_password_error = 'login-password-error';
 		$this->verify_default_error = 'login-required-error';
 		$this->verify_custom_error = false;
-		/*prueba*/
-        $CFG->google_recaptch_api_key = '6LekASQTAAAAAN_ndN2RU9xalMg7VUFG8CqfYtuZ';
-        $CFG->google_recaptch_api_secret = '6LekASQTAAAAALLTxe2atRJKPgoP2caY4YZ8U2Yu';
             
 		if ($this->info) {
 			if (!empty($_REQUEST['remember_values'])) {
@@ -535,9 +532,6 @@ class Form {
 	function display() {
 		global $CFG;		
 	
-        /*prueba*/
-        $CFG->google_recaptch_api_key = '6LekASQTAAAAAN_ndN2RU9xalMg7VUFG8CqfYtuZ';
-        $CFG->google_recaptch_api_secret = '6LekASQTAAAAALLTxe2atRJKPgoP2caY4YZ8U2Yu';
 		// display form
 		if (!$this->output_started) {
 			
@@ -697,9 +691,6 @@ class Form {
 	
 	function verify() {
 		global $CFG;
-		/*prueba*/
-        $CFG->google_recaptch_api_key = '6LekASQTAAAAAN_ndN2RU9xalMg7VUFG8CqfYtuZ';
-        $CFG->google_recaptch_api_secret = '6LekASQTAAAAALLTxe2atRJKPgoP2caY4YZ8U2Yu';
             
 		if ($this->info && $this->compare_fields) {
 			foreach ($this->compare_fields as $name => $comp_name) {
@@ -840,10 +831,6 @@ class Form {
 	function reCaptchaCheck($force=false) {
 		global $CFG;
         
-        /*prueba*/
-        $CFG->google_recaptch_api_key = '6LekASQTAAAAAN_ndN2RU9xalMg7VUFG8CqfYtuZ';
-        $CFG->google_recaptch_api_secret = '6LekASQTAAAAALLTxe2atRJKPgoP2caY4YZ8U2Yu';
-		
 		if (empty($CFG->google_recaptch_api_key) || empty($CFG->google_recaptch_api_secret) || (empty($this->info) && !$force))
 			return false; 
 		
