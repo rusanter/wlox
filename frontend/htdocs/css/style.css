@@ -535,7 +535,7 @@ height: 0;
 	width: 22%;
 }
 .one_fifth {
-	width: 16.800%;
+	width: 18.800%;
 }
 .one_fifth.less-space{width:19%;margin-right:0.5%;}
 .two_third {
@@ -591,7 +591,7 @@ height: 0;
 	display: inline-block;
 	padding: 0;
 	z-index: 101;
-	margin: 0px 4px 0px 0px;
+	margin: 0px 2px 0px 0px;
 	float: left;
 }
 #access .menu ul li.last {
@@ -1721,7 +1721,7 @@ a.forgot:hover{color:#ddd;}
 
 
 .footer h2 {
-	font-size: 23px;
+	font-size: 17px;
 	color: #b8f1df;
     text-shadow: 0 1px #529b85;
 	font-weight: 300;
