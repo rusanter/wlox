@@ -144,7 +144,7 @@
                         <img src="images/elements/icon-signup.svg" alt="icon wallet" height="33" width="33">
                         </a>
                      </div>
-                    <div class="navbar-brand marg" href="register.php">
+                    <div class="navbar-brand marg" style="margin-left: -7px" href="register.php">
                        <a href="register.php"> 
                          <span> <?= Lang::string('home-register') ?></span>
                         </a>
