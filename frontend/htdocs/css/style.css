@@ -532,10 +532,13 @@ height: 0;
 	width: 30.650%;
 }
 .one_fourth {
-	width: 22%;
+	width: 18%;
 }
 .one_fifth {
-	width: 18.800%;
+	width: 16.800%;
+}
+.one_fifth_two {
+	width: 20%;
 }
 .one_fifth.less-space{width:19%;margin-right:0.5%;}
 .two_third {

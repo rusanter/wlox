@@ -5,17 +5,17 @@ db:
   build: db/
   ports:
     - 3306
-  volumes:
-    - ./var/mysql:/var/lib/mysql
+#  volumes:
+#    - ./var/mysql:/var/lib/mysql
 
 # bitcoind
 wallet:
   image: gcr.io/gfts-wlox/bitcoin-classic
   ports:
     - 8332
-  volumes:
-    - ./var/wallet/data:/data
-    - ./var/wallet/notify:/notify
+#  volumes:
+#    - ./var/wallet/data:/data
+#    - ./var/wallet/notify:/notify
 
 # cron
 cron:

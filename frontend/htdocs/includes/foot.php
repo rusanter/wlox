@@ -35,14 +35,12 @@
                 <li><a href="api-docs.php"><?= Lang::string('api-docs') ?></a></li>
             </ul>
          </div>
-         <div class="one_fifth">
+         <div class="one_fifth_two">
             <h2><?= Lang::string('about') ?></h2>
             <ul class="list">
              	<li><a href="<?= Lang::url('about.php') ?>"><?= Lang::string('about') ?></a></li>
                 <li class="divider"></li>
              	<li><a href="<?= Lang::url('our-security.php') ?>"><?= Lang::string('our-security') ?></a></li>
-                <!--<li class="divider"></li>
-             	<li><a href="blog.php"><?= Lang::string('blog') ?></a></li>-->
                 <li class="divider"></li>
              	<li><a href="<?= Lang::url('press-releases.php') ?>"><?= Lang::string('news') ?></a></li>
                 <li class="divider"></li>
@@ -56,11 +54,17 @@
             <h2><?= Lang::string('home-account-functions') ?></h2>
             <ul class="list"> 
                 <li><a href="account.php"><?= Lang::string('account') ?></a></li>
+                <li class="divider"></li>
                 <li><a href="open-orders.php"><?= Lang::string('open-orders') ?></a></li>
+                <li class="divider"></li>
                 <li><a href="transactions.php"><?= Lang::string('transactions') ?></a></li>
+                <li class="divider"></li>
                 <li><a href="security.php"><?= Lang::string('security') ?></a></li>
+                <li class="divider"></li>
                 <li><a href="buy-sell.php"><?= Lang::string('buy-sell') ?></a></li>
+                <li class="divider"></li>
                 <li><a href="deposit.php"><?= Lang::string('deposit') ?></a></li>
+                <li class="divider"></li>
                 <li><a href="withdraw.php"><?= Lang::string('withdraw') ?></a></li>
             </ul>
         </div>
