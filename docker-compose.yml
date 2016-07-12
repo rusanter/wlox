@@ -5,6 +5,8 @@ db:
   build: db/
   ports:
     - 3306
+  environment:
+    exchange_name: Rebranded Exchange
 #  volumes:
 #    - ./var/mysql:/var/lib/mysql
 
@@ -50,6 +52,10 @@ frontend:
     - auth
   ports:
     - 38080:80
+  volumes:
+    - ./frontend/htdocs:/var/www/html
+    - ./frontend/lib:/var/www/lib
+    - ./frontend/public_api:/var/www/public_api
 
 #backstage2
 backstage2:
