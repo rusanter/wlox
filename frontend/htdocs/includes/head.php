@@ -31,7 +31,7 @@
     
     <!-- ######### CSS STYLES ######### -->
 	<!--<link rel="stylesheet" href="css/style.css?v=20150625" type="text/css" />-->
-    <link rel="stylesheet" href="css/style.css?v=20150667" type="text/css" />  
+    <link rel="stylesheet" href="css/style.css?v=20150668" type="text/css" />  
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     
     <!-- responsive devices styles -->
@@ -139,8 +139,8 @@
                 </li>
                
                 <li>
-                    <div class="navbar-brand" href="<?= Lang::url('register.php') ?>">
-                      <a href="<?= Lang::url('register.php') ?>">  
+                    <div class="navbar-brand" href="register.php">
+                      <a href="register.php">  
                         <img src="images/elements/icon-signup.svg" alt="icon wallet" height="33" width="33">
                         </a>
                      </div>
