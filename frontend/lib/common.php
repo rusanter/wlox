@@ -1,9 +1,21 @@
 <?php 
+
+// Start Session Management
+if (!empty($_SERVER["HTTPS"])) ini_set('session.cookie_secure',1);
+ini_set('session.cookie_httponly',1);
+ini_set('session.cookie_path','/');
+session_start();
+
+// Security Settings
+ini_set('expose_php','off');
+header('X-Frame-Options: SAMEORIGIN');
+header('X-XSS-Protection: 1; mode=block');
+header('X-Powered-By: WLOX');
+
 /* Load Libraries */
-include '../cfg.php';
-include 'stdlib.php';
-include 'session.php';
-include 'autoload.php';
+include_once '../cfg.php';
+include_once 'stdlib.php';
+include_once 'autoload.php';
 
 /* HTTP Headers */
 $hostname = (!empty($_SERVER["HTTP_HOST"])) ? $_SERVER["HTTP_HOST"] : $_SERVER["SERVER_NAME"];
@@ -30,25 +42,6 @@ if (!empty($hostname) && !stristr($hostname,'localhost')) {
 	}
 	
 	// ini_set('session.cookie_domain','.'.$hostname);
-}
-
-if (!empty($_SERVER["HTTPS"]))
-	ini_set('session.cookie_secure',1);
-
-ini_set('session.cookie_httponly',1);
-ini_set('session.cookie_path','/');
-ini_set('expose_php','off');
-header('X-Frame-Options: SAMEORIGIN');
-header('X-XSS-Protection: 1; mode=block');
-header('X-Powered-By: WLOX');
-
-/* Readonly Sessions */
-if (empty($ajax)) {
-	session_start();
-//	session_regenerate();
-}
-else {
-	session_readonly();
 }
 
 /* Current File Name */

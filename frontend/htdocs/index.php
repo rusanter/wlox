@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 if (empty($_REQUEST['currency']) && empty($_SESSION['currency']) && !empty(User::$info['default_currency_abbr']))
 	$_SESSION['currency'] = User::$info['default_currency_abbr'];
