@@ -1,4 +1,3 @@
-<? $_SESSION["logout_uniq"] = md5(uniqid(mt_rand(),true));?>
 <!doctype html>
 <!--[if IE 7 ]>    <html lang="<?= $CFG->language ?>" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="<?= $CFG->language ?>" class="isie ie8 oldie no-js"> <![endif]-->
@@ -31,7 +30,7 @@
     
     <!-- ######### CSS STYLES ######### -->
 	<!--<link rel="stylesheet" href="css/style.css?v=20150625" type="text/css" />-->
-    <link rel="stylesheet" href="css/style.css?v=20150667" type="text/css" />  
+    <link rel="stylesheet" href="css/style.css?v=20150668" type="text/css" />  
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     
     <!-- responsive devices styles -->
@@ -139,12 +138,12 @@
                 </li>
                
                 <li>
-                    <div class="navbar-brand" href="<?= Lang::url('register.php') ?>">
-                      <a href="<?= Lang::url('register.php') ?>">  
+                    <div class="navbar-brand" href="register.php">
+                      <a href="register.php">  
                         <img src="images/elements/icon-signup.svg" alt="icon wallet" height="33" width="33">
                         </a>
                      </div>
-                    <div class="navbar-brand marg" href="register.php">
+                    <div class="navbar-brand marg" style="margin-left: -7px" href="register.php">
                        <a href="register.php"> 
                          <span> <?= Lang::string('home-register') ?></span>
                         </a>

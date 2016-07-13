@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 $_SESSION['currency'] = preg_replace("/[^a-z]/", "",$_REQUEST['currency']);
 

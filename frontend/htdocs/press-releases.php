@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 $page1 = (!empty($_REQUEST['page'])) ? ereg_replace("[^0-9]", "",$_REQUEST['page']) : false;
 $bypass = !empty($_REQUEST['bypass']);

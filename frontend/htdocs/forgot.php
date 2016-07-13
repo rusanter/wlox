@@ -1,6 +1,5 @@
 <?php
-
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 $page_title = Lang::string('login-forgot');
 $email1 = (!empty($_REQUEST['forgot']['email'])) ? preg_replace("/[^0-9a-zA-Z@\.\!#\$%\&\*+_\~\?\-]/", "",$_REQUEST['forgot']['email']) : false;

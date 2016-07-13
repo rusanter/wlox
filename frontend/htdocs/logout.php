@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 if ($_REQUEST['log_out'])
 	/*Link::redirect('index.php');*/

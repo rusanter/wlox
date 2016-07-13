@@ -37,6 +37,7 @@ function print_ar($arr, $html_entities = false, $no_interpolation = false, $in_r
 	}
 }
 
+/*
 function session_regenerate() {
 	$session_data = $_SESSION;
 	session_destroy();
@@ -91,6 +92,7 @@ function session_readonly() {
 	else
 		return false;
 }
+*/
 
 function unserialize_php($session_data) {
 	$return_data = array();

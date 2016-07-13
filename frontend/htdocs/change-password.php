@@ -1,6 +1,5 @@
 <?php
-
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 if (User::$awaiting_token)
 	Link::redirect('verify-token.php?email_auth=1&authcode='.urlencode($_REQUEST['authcode']));
