@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 if (!empty($_REQUEST['currency']))
 	$_SESSION['currency'] = strtolower(ereg_replace("[^a-zA-Z]", "",$_REQUEST['currency']));

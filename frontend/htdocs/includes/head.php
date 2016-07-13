@@ -1,4 +1,3 @@
-<? $_SESSION["logout_uniq"] = md5(uniqid(mt_rand(),true));?>
 <!doctype html>
 <!--[if IE 7 ]>    <html lang="<?= $CFG->language ?>" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="<?= $CFG->language ?>" class="isie ie8 oldie no-js"> <![endif]-->

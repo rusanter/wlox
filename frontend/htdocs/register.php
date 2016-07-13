@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 //$_REQUEST['register']['first_name'] = (!empty($_REQUEST['register']['first_name'])) ? preg_replace("/[^\pL a-zA-Z0-9@\s\._-]/u", "",$_REQUEST['register']['first_name']) : false;
 //$_REQUEST['register']['last_name'] = (!empty($_REQUEST['register']['last_name'])) ? preg_replace("/[^\pL a-zA-Z0-9@\s\._-]/u", "",$_REQUEST['register']['last_name']) : false;
@@ -50,7 +50,6 @@ elseif (!empty($_REQUEST['register']) && !is_array($register->errors)) {
 	API::add('User','registerNew',array($register->info));
 	$query = API::send();
 	
-	$_SESSION["register_uniq"] = md5(uniqid(mt_rand(),true));
 	Link::redirect($CFG->baseurl.'login.php?message=registered');
 }
 
@@ -61,6 +60,7 @@ $query = API::send();
 $page_title = Lang::string('home-register');
 
 $_SESSION["register_uniq"] = md5(uniqid(mt_rand(),true));
+
 include 'includes/head.php';
 ?>
 <div class="page_title">
