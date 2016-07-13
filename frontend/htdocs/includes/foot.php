@@ -50,7 +50,7 @@
             </ul>
          </div>
          <? if (User::isLoggedIn()) { ?>
-         <div class="one_fifth last">
+         <div class="one_fifth last_footer">
             <h2><?= Lang::string('home-account-functions') ?></h2>
             <ul class="list"> 
                 <li><a href="account.php"><?= Lang::string('account') ?></a></li>
@@ -69,7 +69,7 @@
             </ul>
         </div>
         <? } else { ?>
-         <div class="one_fifth last">
+         <div class="one_fifth last_footer">
             <h2><?= Lang::string('home-about-bitcoin') ?></h2>
             <ul class="list">   
                 <li><a href="<?= Lang::url('what-are-bitcoins.php') ?>"><?= Lang::string('what-are-bitcoins') ?></a></li>
