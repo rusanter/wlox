@@ -532,7 +532,7 @@ height: 0;
 	width: 30.650%;
 }
 .one_fourth {
-	width: 18%;
+	width: 10%;
 }
 .one_fifth {
 	width: 16.800%;
@@ -545,7 +545,7 @@ height: 0;
 	width: 65.350%;
 }
 .three_fourth {
-	width: 74%;
+	width: 90%;
 }
 .one_fifth li.divider{
 	border-top: 1px solid #64a38f;
@@ -564,7 +564,14 @@ height: 0;
 .last {
 	margin-right: 0 !important;
 	clear: right;
+    position: fixed;
 }
+
+.last_footer {
+	margin-right: 0 !important;
+	clear: right;
+}
+
 
 
 /*------------------*/
@@ -744,7 +751,9 @@ ul.tci_list_left {
 	-webkit-filter: grayscale(100%);
 	width: 128px;
     margin: 2px 0 -4px 0;
+    
 }
+ 
 
 ul.tci_list {
 	float: right;
