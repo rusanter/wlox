@@ -57,8 +57,8 @@ class User {
 		if (!empty($result['error']) || !empty($query['error']) || !isset($result)) {
 			$session_id = session_id();
 			if (!empty($session_id)) {
-				session_destroy();
-				$_SESSION = array();
+				//session_destroy();
+				//$_SESSION = array();
 			}
 			return false;
 		}
@@ -125,27 +125,25 @@ class User {
 	}
 	
 	static function logOut($logout) {
-		  if ($_REQUEST['uniq'] == $_SESSION["logout_uniq"]) {
+		if ($_REQUEST['uniq'] == $_SESSION["logout_uniq"]) {
               
 			API::add('User','logOut',array($_SESSION['session_id']));
 			API::send();
 			
 			$lang = $_SESSION['language'];
 			
-            session_start();
-            unset($_SESSION);
 			session_destroy();
-            
-            
-           /* session_regenerate_id(true);*/
+            		session_start();
 			
 			$_SESSION['language'] = $lang;
 			
 			self::$logged_in = false;
 			self::$info = false;
               
-			}
-        
+		}
+
+		// Safe to set a new logout_uniq now
+		$_SESSION["logout_uniq"] = md5(uniqid(mt_rand(),true));
 	}
 	
 	static function updateNonce() {

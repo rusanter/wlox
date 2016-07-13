@@ -1,6 +1,5 @@
 <?php
-
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 $page_title = Lang::string('home-login');
 $user1 = (!empty($_REQUEST['login']['user'])) ? preg_replace("/[^0-9]/", "",$_REQUEST['login']['user']) : false;
@@ -15,7 +14,7 @@ if (!empty($_REQUEST['submitted'])) {
 		Errors::add(Lang::string('login-password-empty-error'));
 	}
 	
-	if (!empty($_REQUEST['submitted']) && (empty($_SESSION["register_uniq"]) || $_SESSION["register_uniq"] != $_REQUEST['uniq']))
+	if (!empty($_REQUEST['submitted']) && (empty($_SESSION["login_uniq"]) || $_SESSION["login_uniq"] != $_REQUEST['uniq']))
 		Errors::add('Page expired.');
 	
 	if (!empty(User::$attempts) && User::$attempts > 3 && !empty($CFG->google_recaptch_api_key) && !empty($CFG->google_recaptch_api_secret)) {
@@ -30,15 +29,15 @@ if (!empty($_REQUEST['submitted'])) {
 		$login = User::logIn($user1,$pass1);
 		if ($login && empty($login['error'])) {
 			if (!empty($login['message']) && $login['message'] == 'awaiting-token') {
-			    $_SESSION["register_uniq"] = md5(uniqid(mt_rand(),true));
+			    //$_SESSION["login_uniq"] = md5(uniqid(mt_rand(),true));
 				Link::redirect('verify-token.php');
 			}
 			elseif (!empty($login['message']) && $login['message'] == 'logged-in' && $login['no_logins'] == 'Y') {
-			    $_SESSION["register_uniq"] = md5(uniqid(mt_rand(),true));
+			    //$_SESSION["login_uniq"] = md5(uniqid(mt_rand(),true));
 				Link::redirect('first_login.php');
 			}
 			elseif (!empty($login['message']) && $login['message'] == 'logged-in') {
-			    $_SESSION["register_uniq"] = md5(uniqid(mt_rand(),true));
+			    //$_SESSION["login_uniq"] = md5(uniqid(mt_rand(),true));
 				Link::redirect('account.php');
 			}
 		}
@@ -51,7 +50,8 @@ if (!empty($_REQUEST['submitted'])) {
 if (!empty($_REQUEST['message']) && $_REQUEST['message'] == 'registered')
 	Messages::add(Lang::string('register-success'));
 
-$_SESSION["register_uniq"] = md5(uniqid(mt_rand(),true));
+$_SESSION["login_uniq"] = md5(uniqid(mt_rand(),true));
+
 include 'includes/head.php';
 ?>
 <div class="page_title">
@@ -119,7 +119,7 @@ include 'includes/head.php';
 		    	</div>
 		    	<? } ?>
 	    		<input type="hidden" name="submitted" value="1" />
-	    		<input type="hidden" name="uniq" value="<?= $_SESSION["register_uniq"] ?>" />
+	    		<input type="hidden" name="uniq" value="<?= $_SESSION["login_uniq"] ?>" />
 	    		<input type="submit" name="submit" value="<?= Lang::string('home-login') ?>" class="but_user" />
 	    	</div>
     	</form>

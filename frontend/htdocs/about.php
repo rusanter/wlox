@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 API::add('Content','getRecord',array('about'));
 $query = API::send();
