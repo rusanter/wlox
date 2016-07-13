@@ -1,21 +1,31 @@
 #plataforma de wlox
 
+#redis
+redis:
+  image: redis
+  ports: 
+    - 6379
+
 #database
 db:
   build: db/
   ports:
     - 3306
-  volumes:
-    - ./var/mysql:/var/lib/mysql
+  environment:
+    exchange_name: Rebranded Exchange
+#  volumes:
+#    - ./var/mysql:/var/lib/mysql
 
 # bitcoind
 wallet:
   image: gcr.io/gfts-wlox/bitcoin-classic
   ports:
     - 8332
-  volumes:
-    - ./var/wallet/data:/data
-    - ./var/wallet/notify:/notify
+  environment:
+    testnet: 1
+#  volumes:
+#    - ./var/wallet/data:/data
+#    - ./var/wallet/notify:/notify
 
 # cron
 cron:
@@ -48,8 +58,13 @@ frontend:
   links:
     - api
     - auth
+    - redis
   ports:
     - 38080:80
+  volumes:
+    - ./frontend/htdocs:/var/www/html
+    - ./frontend/lib:/var/www/lib
+    - ./frontend/public_api:/var/www/public_api
 
 #backstage2
 backstage2:

@@ -1,5 +1,5 @@
 <?php
-include '../lib/common.php';
+include_once '../lib/common.php';
 
 $_REQUEST['contact']['first_name'] = (!empty($_REQUEST['contact']['first_name'])) ? preg_replace("/[^\pL a-zA-Z0-9@\s\._-]/u", "",$_REQUEST['contact']['first_name']) : false;
 $_REQUEST['contact']['last_name'] = (!empty($_REQUEST['contact']['last_name'])) ? preg_replace("/[^\pL a-zA-Z0-9@\s\._-]/u", "",$_REQUEST['contact']['last_name']) : false;
