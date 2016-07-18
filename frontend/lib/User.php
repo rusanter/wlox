@@ -136,8 +136,13 @@ class User
          ));
          API::send();
          $lang = $_SESSION['language'];
+
          session_destroy();
+         session_unset();
+
          session_start();
+         session_regenerate_id();
+
          $_SESSION['language'] = $lang;
          self::$logged_in = false;
          self::$info = false;
