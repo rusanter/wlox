@@ -1,3 +1,4 @@
+<? $_SESSION["logout_uniq"] = md5(uniqid(mt_rand(),true));?>
 <!doctype html>
 <!--[if IE 7 ]>    <html lang="<?= $CFG->language ?>" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="<?= $CFG->language ?>" class="isie ie8 oldie no-js"> <![endif]-->
@@ -30,7 +31,7 @@
     
     <!-- ######### CSS STYLES ######### -->
 	<!--<link rel="stylesheet" href="css/style.css?v=20150625" type="text/css" />-->
-    <link rel="stylesheet" href="css/style.css?v=20150671" type="text/css" />  
+    <link rel="stylesheet" href="css/style.css?v=20150673" type="text/css" />  
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     
     <!-- responsive devices styles -->
