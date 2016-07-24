@@ -18,6 +18,8 @@
 	width: 1000px;
 	margin: auto auto auto auto;
 }
+    
+
 
 a.button_slider {
 	padding: 13px 18px;
@@ -114,19 +116,20 @@ ul.post_meta_links {
 .tci_list li.empty {
 	margin: 0px 10px 0px 0px;
 }
-.tci_list li.empty a {
+.tci_list li.empty div a {
 	font-size: 12px;
 }
-.tci_list li a {
+.tci_list li div a {
 	width: 22px;
 	height: 22px;
 	line-height: 22px;
 }
 
+
 #access .menu ul li {
 	margin: 0px 1px 0px 0px;
 }
-#access .menu ul li a {
+#access .menu ul li div a {
 	font-size: 13px;
 	padding: 13px 7px 12px 9px;
 }
@@ -1146,17 +1149,29 @@ a.show_hide{
 }
 .mobilebanner{
 	display:block;
+    padding: 0px;
+}
+.mobilebanner .h1{
+	font-size: 50px;	
 }
 .mobilebanner .text{
-	margin:15px 10px 5px;	
+	margin:15px 10px 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mobilebanner .crypto_logo {
+	width: 500px;
 }
 .balances{margin-left:0;}
 .starting_in.rank {line-height: 36px;}
 .container {
-	width: 300px;
+	width: 320px;
 	margin: auto auto auto auto;
 }
-
+.ticker {
+	width: 360px;
+	margin: auto auto auto auto;
+}
 .content_left {
 	float: left;
 	width: 100%;
@@ -1202,6 +1217,12 @@ a.show_hide{
 	width: 100%;
 	margin-bottom: 30px;
 }
+    
+.one_fifth_two {
+	width: 100%;
+	margin-bottom: 30px;
+}
+    
 .two_third {
 	width: 100%;
 	margin-bottom: 30px;
@@ -1232,7 +1253,7 @@ ul.tci_list {
 	padding-left:10px;
 }
 ul.tci_list_left{
-	padding:14px 0 0 10px;
+	padding:1px 0 0 10px;
 }
 
 .tci_list_left li {
@@ -1243,8 +1264,9 @@ ul.tci_list_left{
 	font-size: 11px;
 }
 .tci_list li {
-	margin: 9px 0px 0px 2px;
+	margin: 7px -5px 0px 2px;
 	font-size: 12px;
+    width: 50px;
 }
 .tci_list li.empty {
 	margin: 0px 5px 10px 0px;
@@ -1258,8 +1280,13 @@ ul.tci_list_left{
 	line-height: 18px;
 }
 
+.tci_list li div a span {
+    display: none;
+}
+    
 a.button_slider {
-	margin:15px 0 15px 10px;
+	margin:5px 6px 20px -5px;
+    padding: 10px 22px;
 }
 
 .slider_sec_box{
