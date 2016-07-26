@@ -92,7 +92,7 @@ ul.post_meta_links {
 }
 
 
-@media only screen and (min-width: 768px) and (max-width: 999px){
+@media only screen and (min-width: 769px) and (max-width: 999px){
 .global_stats .stat1 {font-size:18px !important;}
 .global_stats .stat2 {font-size:18px !important;}
 .m_head {display:none;}
@@ -107,10 +107,10 @@ ul.post_meta_links {
 .tci_list_left li a {
 	font-size: 11px;
 }
-.tci_list li {
+/*.tci_list li { Comentado por Alexis Fernandez
 	margin: 9px 0px 0px 2px;
 	font-size: 12px;
-}
+}*/
 .tci_list li.empty {
 	margin: 0px 10px 0px 0px;
 }
@@ -431,17 +431,85 @@ a.show_hide{
 	width: 18px;
 }
 
+/*
+* codigo modificado por Alexis Fernandez 
+* para la correcta visualizacion del menu
+*/
+.custom_menu {
+    float: none;
+    width: 100%;
+    position: relative;
+}
+#menu {
+    width: 100%;
+    height: auto;
+}
+.menu_line {
+    width: 40px;
+    height: 5px;
+    margin: 5px;
+    background-color: #fff;
+}
+#custom_btnMenu {
+    float: right;
+    overflow: hidden;
+    display: block;
+}
+ul#tiny {
+    display: none;
+    width: 100%;
+    height: auto !important;
+}
+#access .menu ul li{
+	display:block;
+	float:none;
+}
+.top_contact_info {
+    min-height: 50px;
+}
+.container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+a#logo {
+    margin: 0 !important;
+}
+#access .menu select, .mar_top6, .mar_top5, .mar_top8 {
+    display: none;
+}
+#clouds {
+    padding: 0 0 64px 0;
+    height: auto;
+}
+#header:not(.sticky) {
+    height: auto !important;
+}
+.fresh_projects h2 {
+    margin: 60px 0 0 0;
+}
+.crypto_logo>a>img {
+    margin: 0 !important;
+    max-height: 30px;
+}
+
+/*
+* fin codigo Alexis Fernandez
+*/
+
+
 
 }
 
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 768px){
 .panel-body .one_fifth{margin-bottom: 2px;}
 .panel-body .one_third{margin-bottom: 2px;}
 .non-mobile {display:none;}
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px){
+@media only screen and (min-width: 480px) and (max-width: 768px){
 	
 /* Disable menu */
 #access .menu ul#tiny {display: none;}
@@ -462,9 +530,9 @@ a.show_hide{
 .fullwidthbanner-container {display:none;}
 #header.sticky {height:160px !important;}
 #header:not(.sticky) {height:249px !important;}
-.sticky #trueHeader #logo{
+/*.sticky #trueHeader #logo{//comentado por alexis fernandez
 	display:none;
-}
+}*/
 .sticky #access .menu select{
 	margin: -35px 25px 10px 0px !important;
 }
@@ -577,10 +645,10 @@ ul.tci_list_left{
 .tci_list_left li a {
 	font-size: 11px;
 }
-.tci_list li {
+/*.tci_list li { Comentado por Alexis Fernandez
 	margin: 9px 0px 0px 2px;
 	font-size: 12px;
-}
+}*/
 .tci_list li.empty {
 	margin: 0px 5px 0px 0px;
 }
@@ -743,12 +811,13 @@ a.button_slider {
 }
 
 .footer .one_fourth{
-	width: 100%;
+	/*width: 100%;*//*comentado por Alexis Fernandez*/
+	width: 25%;
 	margin-right: 0%;
 }
 
 .copyright_info .one_half{
-	width: 100%;
+	width: 50%;
 	margin-right: 0%;
 }
 
@@ -1100,6 +1169,80 @@ a.show_hide{
 }
 
 
+/*
+* codigo modificado por Alexis Fernandez 
+* para la correcta visualizacion del menu
+*/
+.custom_menu {
+    float: none;
+    width: 100%;
+    position: relative;
+}
+#menu {
+    width: 100%;
+    height: auto;
+}
+.menu_line {
+    width: 40px;
+    height: 5px;
+    margin: 5px;
+    background-color: #fff;
+}
+#custom_btnMenu {
+    float: right;
+    overflow: hidden;
+    display: block;
+}
+ul#tiny {
+    display: none;
+    width: 100%;
+    height: auto !important;
+}
+#access .menu ul li{
+	display:block;
+	float:none;
+}
+.top_contact_info {
+    min-height: 100px;
+}
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+ul.tci_list_left {
+    padding: 0;
+    margin: 10px auto;
+    float: none;
+    overflow: hidden;
+}
+a#logo {
+    margin: 0 !important;
+}
+#access .menu select, .mar_top6, .mar_top5, .mar_top8 {
+    display: none;
+}
+#clouds {
+    padding: 0 0 64px 0;
+    height: auto;
+}
+#header:not(.sticky) {
+    height: auto !important;
+}
+.fresh_projects h2 {
+    margin: 60px 0 0 0;
+}
+.crypto_logo>a>img {
+    margin: 0 !important;
+    max-height: 30px;
+}
+
+/*
+* fin codigo Alexis Fernandez
+*/
+
+
 }
 
 
@@ -1125,10 +1268,12 @@ a.show_hide{
 }
 
 #header.sticky {height:160px !important;}
-#header:not(.sticky) {height:249px !important;}
-.sticky #trueHeader #logo{
+/*#header:not(.sticky) {//Comentado por alexis fernandez
+	height:249px !important;
+}*/
+/*.sticky #trueHeader #logo{//comentador por alexis fernandez
 	display:none;
-}
+}*/
 .sticky #access .menu select{
 	margin: -35px 25px 10px 0px !important;
 }
@@ -1180,7 +1325,8 @@ a.show_hide{
 .content_right {
 	float: left;
 	width: 100%;
-	padding: 40px 0px 0px 0px;
+	/*padding: 40px 0px 0px 0px;  comentado por alexis fernandez */
+	padding: 0px;
 }
 
 .one_full {
@@ -1219,12 +1365,12 @@ a.show_hide{
 .top_contact_info {
 	min-height: 90px;
 }
-
-#trueHeader #logo{
+/***CODIGO COMENTADO POR ALEXIS FERNANDEZ***/
+/*#trueHeader #logo{
 	margin-top: 9px;
 	margin-bottom: 22px;
 	background:url(../images/logo.png) no-repeat center top;
-}
+}*/
 
 ul.tci_list {
 	float:left;
@@ -1242,10 +1388,10 @@ ul.tci_list_left{
 .tci_list_left li a {
 	font-size: 11px;
 }
-.tci_list li {
+/*.tci_list li { Comentado por Alexis Fernandez
 	margin: 9px 0px 0px 2px;
 	font-size: 12px;
-}
+}*/
 .tci_list li.empty {
 	margin: 0px 5px 10px 0px;
 }
@@ -1928,5 +2074,78 @@ a.show_hide{
 	padding: 10px 4px;
 	font-size: 10px;
 }
+
+/*
+* codigo modificado por Alexis Fernandez 
+* para la correcta visualizacion del menu
+*/
+.custom_menu {
+    float: none;
+    width: 100%;
+    position: relative;
+}
+#menu {
+    width: 100%;
+    height: auto;
+}
+.menu_line {
+    width: 40px;
+    height: 5px;
+    margin: 5px;
+    background-color: #fff;
+}
+#custom_btnMenu {
+    float: right;
+    overflow: hidden;
+    display: block;
+}
+ul#tiny {
+    display: none;
+    width: 100%;
+    height: auto !important;
+}
+#access .menu ul li{
+	display:block;
+	float:none;
+}
+.top_contact_info {
+    min-height: 100px;
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+ul.tci_list_left {
+    padding: 0;
+    margin: 10px auto;
+    float: none;
+    overflow: hidden;
+}
+a#logo {
+    margin: 0 !important;
+}
+#access .menu select, .mar_top6, .mar_top8 {
+    display: none;
+}
+#clouds {
+    padding: 0 0 64px 0;
+    height: auto;
+}
+#header:not(.sticky) {
+    height: auto !important;
+}
+.fresh_projects h2 {
+    margin: 60px 0 0 0;
+}
+.crypto_logo>a>img {
+    margin: 0 !important;
+    max-height: 30px;
+}
+
+/*
+* fin codigo Alexis Fernandez
+*/
 
 }
