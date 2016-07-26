@@ -14,12 +14,13 @@
             <div class="footer_logo"><img src="images/logo4.png" alt="" /></div>
             
             <ul class="contact_address">
-                <li><img src="images/footer-wmap.png" alt="" /></li>
+                <li><img src="images/footer-wmap.png" alt="address" style="width: 100%;" /></li>
             </ul>
             
         </div>
         
-        <div class="one_fifth">
+        <!--div class="one_fifth"--><!--comentado por alexis fernandez-->
+        <div class="one_fourth">
             <h2><?= Lang::string('home-basic-nav') ?></h2>
             <ul class="list">
              	<li><a href="<?= Lang::url('index.php') ?>"><?= Lang::string('home') ?></a></li>
@@ -35,7 +36,8 @@
                 <li><a href="api-docs.php"><?= Lang::string('api-docs') ?></a></li>
             </ul>
          </div>
-         <div class="one_fifth_two">
+         <!--div class="one_fifth_two"--><!--comentado por alexis fernandez-->
+        <div class="one_fourth">
             <h2><?= Lang::string('about') ?></h2>
             <ul class="list">
              	<li><a href="<?= Lang::url('about.php') ?>"><?= Lang::string('about') ?></a></li>
@@ -50,7 +52,8 @@
             </ul>
          </div>
          <? if (User::isLoggedIn()) { ?>
-         <div class="one_fifth last_footer">
+         <!--div class="one_fifth last_footer"--><!--comentado por alexis fernandez-->
+        <div class="one_fourth last_footer">
             <h2><?= Lang::string('home-account-functions') ?></h2>
             <ul class="list"> 
                 <li><a href="account.php"><?= Lang::string('account') ?></a></li>
@@ -69,7 +72,8 @@
             </ul>
         </div>
         <? } else { ?>
-         <div class="one_fifth last_footer">
+         <!--div class="one_fifth last_footer"--><!--comentado por alexis fernandez-->
+        <div class="one_fourth last_footer">
             <h2><?= Lang::string('home-about-bitcoin') ?></h2>
             <ul class="list">   
                 <li><a href="<?= Lang::url('what-are-bitcoins.php') ?>"><?= Lang::string('what-are-bitcoins') ?></a></li>
@@ -143,6 +147,24 @@
 
 
 
+</script>
+<script>
+	$(document).ready(function(){
+		$('#custom_btnMenu').click(function(){
+			$('#custom_btnMenu>div:first-child').css({"transform":"rotate(45deg)","position":"relative","top":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
+			$('#custom_btnMenu>div:nth-child(2)').css({"transform":"translate(50px)", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
+			$('#custom_btnMenu>div:last-child').css({"transform":"rotate(-45deg)","position":"relative","bottom":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
+			$('#tiny').slideDown('slow');
+			$('#custom_btnMenu').addClass('cerrar');
+		});
+		$('#custom_btnMenu .cerrar').click(function(){
+			$('#custom_btnMenu>div:first-child').css({"transform":"rotate(45deg)","position":"relative","top":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
+			$('#custom_btnMenu>div:nth-child(2)').css({"transform":"translate(50px)", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
+			$('#custom_btnMenu>div:last-child').css({"transform":"rotate(-45deg)","position":"relative","bottom":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
+			$('#tiny').slideUp('slow');
+			$('#custom_btnMenu').removeClass('cerrar');
+		});
+	});
 </script>
 
 </body>
