@@ -65,11 +65,11 @@ include 'includes/head.php';
 ?>
 <div class="page_title">
 	<div class="container">
-		<div class="title">
-            <h1><?= $page_title ?></h1>
+		<!--div class="title"> comentado por alexis fernandez
+            <h1><?/*= $page_title */?></h1>
                <br>
             <hr class="mainHr">
-        </div>
+        </div-->
         <div class="pagenation">&nbsp;
             <a href="index.php"><?= Lang::string('home') ?></a>
             <i>/</i> 
@@ -78,7 +78,7 @@ include 'includes/head.php';
 	</div>
 </div>
 <div class="container">
-	<? include 'includes/sidebar_account.php'; ?>
+	<? /* include 'includes/sidebar_account.php'; */ // comentado por alexis fernandez ?>
 	<div class="content_right">
 		<div class="testimonials-4">
 			<? 
