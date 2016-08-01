@@ -2137,9 +2137,26 @@ ul#tiny {
 }
 ul.tci_list_left {
     padding: 0;
-    margin: 10px auto;
+    margin: 10px auto 0;
     float: none;
     overflow: hidden;
+}
+ul.tci_list {
+    padding-left: 0px;
+    WIDTH: 100%;
+}
+.tci_list li {
+    width: 75px;
+}
+.tci_list li div a img {
+    width: 32px;
+}
+.tci_list li.empty.margin-left{
+	margin:0 !important;
+	float:right;
+}
+.tci_list li.empty {
+    margin: 0 !important;
 }
 a#logo {
     margin: 0 !important;
