@@ -187,7 +187,7 @@
 		<div class="custom_logo"><a href="index.php" id="logo"></a></div>
 		
         <!-- Menu -->
-		<div id="custom_btnMenu">
+		<div class="custom_btnMenu abrir">
 			<div class="menu_line"></div>
 			<div class="menu_line"></div>
 			<div class="menu_line"></div>

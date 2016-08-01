@@ -150,19 +150,8 @@
 </script>
 <script>
 	$(document).ready(function(){
-		$('#custom_btnMenu').click(function(){
-			$('#custom_btnMenu>div:first-child').css({"transform":"rotate(45deg)","position":"relative","top":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
-			$('#custom_btnMenu>div:nth-child(2)').css({"transform":"translate(50px)", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
-			$('#custom_btnMenu>div:last-child').css({"transform":"rotate(-45deg)","position":"relative","bottom":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
-			$('#tiny').slideDown('slow');
-			$('#custom_btnMenu').addClass('cerrar');
-		});
-		$('#custom_btnMenu .cerrar').click(function(){
-			$('#custom_btnMenu>div:first-child').css({"transform":"rotate(45deg)","position":"relative","top":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
-			$('#custom_btnMenu>div:nth-child(2)').css({"transform":"translate(50px)", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
-			$('#custom_btnMenu>div:last-child').css({"transform":"rotate(-45deg)","position":"relative","bottom":"10px", "transition": "all 1s ease", "-moz-transition": "all 1s ease", "-webkit-transition": "all 1s ease", "-o-transition": "all 1s ease"});
-			$('#tiny').slideUp('slow');
-			$('#custom_btnMenu').removeClass('cerrar');
+		$('.abrir').click(function(){
+			$('#tiny').slideToggle('fast');
 		});
 	});
 </script>
