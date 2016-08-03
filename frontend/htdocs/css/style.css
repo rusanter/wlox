@@ -774,7 +774,8 @@ del {
     display: inline-block;
 /*    margin-bottom: -12px; Comentado por Alexis Fernandez
     margin-left: 6px;*/
-    margin: 0 !important;
+    /* margin: 0 !important; Comentado por MJC */
+    margin-bottom: -12px;
     max-height: 30px;
 }
 
