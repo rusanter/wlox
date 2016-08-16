@@ -72,7 +72,7 @@ body {
     margin: 0px;
     line-height: 1;
     /*background: #fff;*/
-    
+
     background: url('../images/elements/bg-top.png') repeat scroll 0 0 transparent;
     color: #571b00;
     font-family: "whitemedium", Helvetica, Arial, sans-serif;
@@ -80,7 +80,7 @@ body {
     font-style: normal;
     line-height: 1;
     /*text-shadow:0 1px #FFF;*/
-    
+
     position: relative;
 }
 
@@ -88,13 +88,13 @@ body,
 input,
 textarea {
     /*font: 13px 'Open Sans', sans-serif;*/
-    
+
     font: 13px 'Helvetica', 'Arial', sans-serif;
     font-weight: normal;
     font-style: normal;
     line-height: 22px;
     /*color: #727272;*/
-    
+
     color: #571b00;
 }
 
@@ -106,7 +106,7 @@ h4,
 h5,
 h6 {
     /*font-family: 'Roboto', sans-serif;*/
-    
+
     font-family: "whitelight", "Helvetica", "Arial", sans-serif;
     font-weight: 300;
     color: #571b00;
@@ -573,7 +573,7 @@ del {
     height: 34px;
     margin-top: 20px;
     text-indent: -999em;
-    background: url(../images/logo1.png) no-repeat left bottom !important;
+    background: url(../images/coinap_exc.png) no-repeat left bottom !important;
 }
 
 .clear {
@@ -845,7 +845,7 @@ del {
 .ticker a.selected {} .ticker a.selected .abbr {}
 
 /*
-* codigo modificado por Alexis Fernandez 
+* codigo modificado por Alexis Fernandez
 * para la correcta visualizacion del logo
 */
 
@@ -1090,7 +1090,7 @@ del {
     margin-left: 20px;
 }
 /*
-* codigo modificado por Alexis Fernandez 
+* codigo modificado por Alexis Fernandez
 * para la correcta visualizacion del menu
 */
 
@@ -1165,7 +1165,7 @@ ul.tci_list {
     width: 120px;
     height: 40px;
     display: inline-block;
-	
+
 }
 .tci_list li div a {
     /*height: 41px; Comentado por Alexis Fernandez
@@ -1197,7 +1197,7 @@ ul.tci_list {
 }
 .tci_list li a:hover {
     /*background-color: #e3e3e3;*/
-    
+
     color: #e3e3e3;
 }
 .tci_list li.empty {
@@ -1886,7 +1886,7 @@ a.button_slider:hover {
 }
 .login_bg .loginform {
     /*background-color: #f0f0f0;*/
-    
+
     background: url("../images/elements/bg-top.png") repeat scroll 0 0 transparent;
     width: 320px;
     margin: 25px auto;
@@ -2236,7 +2236,7 @@ a.forgot:hover {
     float: left;
     width: 100%;
     /*background: #383634 url(../images/elements/dark_mosaic.png) repeat left top;*/
-    
+
     background: url(/images/elements/bg-footer.png) repeat scroll 0 0 transparent;
     border-top: 5px solid #ef803c;
     color: #999;
@@ -2268,7 +2268,7 @@ a.forgot:hover {
 }
 .footer a:hover {
     /*color: #fff;*/
-    
+
     background: rgba(0, 0, 0, 0.025);
 }
 .footer a:not(.button):focus {
@@ -2302,6 +2302,8 @@ a.forgot:hover {
     float: left;
     padding: 0px;
     margin: 0px;
+    border-radius: 4px; /*Modificado MJC */
+    background-color: #fff;
 }
 /* Tweets */
 
@@ -2378,7 +2380,7 @@ a.forgot:hover {
     width: 100%;
     /*color: #fff;*/
     /*background: #ff7a29 url(../images/h-lines2.png) repeat-x left 1px;*/
-    
+
     background: url(../images/elements/bg-copy.png) repeat scroll center top transparent;
 }
 .copyright_info .one_half {
@@ -2399,7 +2401,7 @@ a.forgot:hover {
     margin-top: 10px;
     font-size: 12px;
     /*color: #fff;*/
-    
+
     text-align: right;
 }
 .copyright_info a:hover {
@@ -2419,7 +2421,7 @@ ul.footer_social_links {
     border-radius: 24px;
         line-height: 22px;
         vertical-align: middle;*/
-    
+
     float: left;
     padding: 0px;
     margin-right: .65rem;
@@ -2438,7 +2440,7 @@ ul.footer_social_links {
 .footer_social_links li i {
     /*background-color: rgba(0,0,0,0.1);
     border: 1px outset rgba(0,0,0,0.2);*/
-    
+
     text-align: center;
     color: rgba(0, 0, 0, 0.7);
     font-size: 1.65rem;
@@ -2582,7 +2584,7 @@ font-style:normal}
     /*padding: 28px 0px;  comentado por alexis fernandez*/
 	padding: 10px 0px;
     /*background: #383634 url(../images/elements/dark_mosaic.png) repeat left top;*/
-    
+
     background: url(../images/elements/bg-top.png) repeat scroll 0 0 transparent;
 }
 .page_title .title {
@@ -4576,24 +4578,24 @@ button {
     outline: none;
     overflow: hidden;
     /* removes extra side padding in IE */
-    
+
     cursor: pointer;
     border: 1px solid #dcdcdc;
     /* IE */
-    
+
     border: rgba(0, 0, 0, .2) 1px solid;
     /* Saf4+, Chrome, FF3.6 */
-    
+
     border-bottom: rgba(0, 0, 0, .4) 1px solid;
     font-family: 'Helvetica', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
     background: -moz-linear-gradient( center top, rgba(255, 255, 255, .1) 0%, rgba(0, 0, 0, .1) 100%);
     /* FF3.6 */
-    
+
     background: -webkit-gradient( linear, center top, center bottom, from(rgba(255, 255, 255, .1)), to(rgba(0, 0, 0, .1)));
     /* Saf4+, Chrome */
-    
+
     background-color: white;
 }
 .button::-moz-focus-inner {
@@ -4605,7 +4607,7 @@ button {
 .page-numbers:hover {
     background: -moz-linear-gradient( center top, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, .1) 100%);
     /* FF3.6 */
-    
+
     background: -webkit-gradient( linear, center bottom, center top, from(rgba(255, 255, 255, .1)), to(rgba(255, 255, 255, .2)));
     /* Saf4+, Chrome */
 }
@@ -4615,7 +4617,7 @@ button {
     top: 2px;
     background: -moz-linear-gradient( center top, rgba(0, 0, 0, .1) 0%, rgba(255, 255, 255, .2) 100%);
     /* FF3.6 */
-    
+
     background: -webkit-gradient( linear, center bottom, center top, from(rgba(255, 255, 255, .2)), to(rgba(0, 0, 0, .1)));
     /* Saf4+, Chrome */
 }
