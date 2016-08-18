@@ -1,6 +1,6 @@
 # Application Definition
 APPNAME=wlox
-VERSION=1.15.0-rc2
+VERSION=1.15.0-rc3
 
 # GCP Config
 GCP_PROJECT=gfts-coinapult-wlox
