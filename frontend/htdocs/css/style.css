@@ -795,7 +795,8 @@ del {
 
 .ticker {
     bottom: 0;
-    height: 55px;
+    /*height: 55px; codigo comentado por alexis fernandez */
+	height:46px;
     left: 0;
     overflow: hidden;
     position: absolute;
@@ -868,6 +869,7 @@ del {
 .container_full {
     width: 100%;
     float: left;
+	padding:40px 0px;/*codigo escrito por Alexis Fernandez*/
     margin: auto auto auto auto;
 }
 
@@ -1242,7 +1244,8 @@ ul.tci_list {
 #clouds {
     overflow: hidden;
     position: relative;
-    padding: 64px 0;
+    /*padding: 64px 0; Codigo cambiado por Alexis Fernandez */
+	padding: 40px 0 0;
     height: 400px;
 }
 #clouds .legend {

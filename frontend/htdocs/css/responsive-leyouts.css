@@ -2,7 +2,7 @@
 
 @media only screen and (min-width: 1170px){
 	/*.mobilebanner { height: 380px;padding: 100px 0 0 0;} Modificaco por Alexis Fernandez */
-	.mobilebanner { height: 380px;padding: 40px 0 0 0;}
+	.mobilebanner { height: 400px;padding: 0;}
 	.mobilebanner h1 { font-size:58px;margin-bottom: 20px;}
 	.mobilebanner .text { font-size: 16px;line-height: 26px;}
 	.m_head {display:none;}
@@ -10,7 +10,7 @@
 }
 
 @media only screen and (max-width: 1169px){
-	.mobilebanner .container {padding-bottom: 50px;}
+	.mobilebanner .container {padding-bottom: 80px;}
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1169px){
@@ -488,7 +488,7 @@ a#logo {
     display: none;
 }
 #clouds {
-    padding: 0 0 64px 0;
+    padding: 0px;
     height: auto;
 }
 #header:not(.sticky) {
@@ -1233,7 +1233,7 @@ a#logo {
     display: none;
 }
 #clouds {
-    padding: 0 0 64px 0;
+    padding: 0px;
     height: auto;
 }
 #header:not(.sticky) {
@@ -2165,7 +2165,7 @@ a#logo {
     display: none;
 }
 #clouds {
-    padding: 0 0 64px 0;
+    padding: 0px;
     height: auto;
 }
 #header:not(.sticky) {
