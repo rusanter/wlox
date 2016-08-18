@@ -4,21 +4,21 @@
 <div class="footer">
 
 	<div class="arrow_02"></div>
-	
+
     <div class="clearfix mar_top5"></div>
-	
+
     <div class="container">
-    
+
    		<div class="one_fourth">
-            
-            <div class="footer_logo"><img src="images/logo4.png" alt="" /></div>
-            
+
+            <div class="footer_logo"><img src="images/coinapult_exc.png" alt="" style="margin-top=2px" /></div>
+
             <ul class="contact_address">
                 <li><img src="images/footer-wmap.png" alt="address" style="width: 100%;" /></li>
             </ul>
-            
+
         </div>
-        
+
         <!--div class="one_fifth"--><!--comentado por alexis fernandez-->
         <div class="one_fourth">
             <h2><?= Lang::string('home-basic-nav') ?></h2>
@@ -55,7 +55,7 @@
          <!--div class="one_fifth last_footer"--><!--comentado por alexis fernandez-->
         <div class="one_fourth last_footer">
             <h2><?= Lang::string('home-account-functions') ?></h2>
-            <ul class="list"> 
+            <ul class="list">
                 <li><a href="account.php"><?= Lang::string('account') ?></a></li>
                 <li class="divider"></li>
                 <li><a href="open-orders.php"><?= Lang::string('open-orders') ?></a></li>
@@ -75,7 +75,7 @@
          <!--div class="one_fifth last_footer"--><!--comentado por alexis fernandez-->
         <div class="one_fourth last_footer">
             <h2><?= Lang::string('home-about-bitcoin') ?></h2>
-            <ul class="list">   
+            <ul class="list">
                 <li><a href="<?= Lang::url('what-are-bitcoins.php') ?>"><?= Lang::string('what-are-bitcoins') ?></a></li>
                 <li class="divider"></li>
                 <li><a href="<?= Lang::url('how-bitcoin-works.php') ?>"><?= Lang::string('how-bitcoin-works') ?></a></li>
@@ -85,9 +85,9 @@
          </div>
          <? } ?>
     </div>
-	
+
     <div class="clearfix mar_top5"></div>
-    
+
 </div>
 
 
@@ -95,19 +95,19 @@
     <div class="container">
         <div class="one_half">
 
-            <b>Copyright &copy; 2014 WLOX. All rights reserved.</b>
+            <b>Copyright &copy; 2014 COINAPULT EXCHANGE. All rights reserved.</b>
 
         </div>
 
     	<div class="one_half last">
-     		
+
             <ul class="footer_social_links">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
-                
+
     	</div>
-    
+
     </div>
 </div><!-- end copyright info -->
 
@@ -115,7 +115,7 @@
 <a href="#" class="scrollup">Scroll</a><!-- end scroll to top of the page-->
 
 </div>
-    
+
 <!-- ######### JS FILES ######### -->
 <script type="text/javascript" src="js/universal/jquery.js"></script>
 <script type="text/javascript" src="js/universal/jquery-ui-1.10.3.custom.min.js"></script>
