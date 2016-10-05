@@ -8,6 +8,11 @@ RUN apt-get update
 RUN apt-get install -y openssl libcurl4-openssl-dev libgd-dev libmcrypt-dev \
     && docker-php-ext-install curl gd mcrypt json mysql pdo_mysql
 
+# Memcached
+RUN apt-get install -y libz-dev libmemcached-dev \
+    && pecl install memcached \
+    && echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini
+
 # Enable Rewrite
 RUN a2enmod rewrite
 
