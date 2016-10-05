@@ -71,7 +71,7 @@ spec:
         image: gcr.io/gfts-wlox/bitcoin-classic:1.1.0
         env:
         - name: testnet
-          value: '1'
+          value: '0'
         - name: username
           valueFrom:
             secretKeyRef:

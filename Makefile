@@ -6,7 +6,7 @@ VERSION=$(shell git describe --tags)
 GCP_PROJECT=gfts-coinapult
 NAMESPACE=gcr.io/$(GCP_PROJECT)
 LOCATION=us-central1-a
-CLUSTER=wlox-dev
+CLUSTER=wlox-prod
 
 # Docker Config
 FRONTEND_PORT=5900:80
