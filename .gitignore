@@ -1,2 +1,4 @@
 var/
 *.old
+docker-compose.yml
+gcp.yml
