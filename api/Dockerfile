@@ -10,7 +10,7 @@ RUN apt-get install -y openssl libcurl4-openssl-dev libgd-dev libmcrypt-dev \
 
 # Memcached
 RUN apt-get install -y libz-dev libmemcached-dev \
-    && pecl install memcached \
+    && pecl install memcached-2.2.0 \
     && echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini
 
 # Enable Rewrite

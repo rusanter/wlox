@@ -3,7 +3,7 @@ services:
 
   redis:
     image: redis
-    ports: 
+    ports:
       - 6379
 
   db:
@@ -16,13 +16,15 @@ services:
       - ./var/mysql:/var/lib/mysql
 
   wallet:
-    image: gcr.io/gfts-wlox/bitcoin-classic
+    image: ensocoin
+    container_name: ensocoind
+    command: ensocoind -testnet
     ports:
-      - 8332
+      - 17992:17992
     environment:
       testnet: 1
     volumes:
-      - ./var/wallet/data:/data
+      - /media/DATA/Ensocoin:/data
       - ./var/wallet/notify:/notify
 
   cron:
@@ -78,3 +80,7 @@ services:
     ports:
       - {{ADMIN_PORT}}
 
+networks:
+  default:
+    external:
+      name: ensocoin

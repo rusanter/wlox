@@ -6,7 +6,7 @@ RUN npm install -g nodemon
 
 # Build modules
 ADD package.json /app/
-RUN npm install && npm cache clean
+RUN npm install && npm cache clean --force
 
 # Copy Code
 ADD . /app/
