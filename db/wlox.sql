@@ -498,7 +498,8 @@ CREATE TABLE `app_configuration` (
   `google_recaptch_api_secret` varchar(255) NOT NULL,
   `cloudflare_blacklist_attempts` int(10) NOT NULL DEFAULT '150',
   `cloudflare_blacklist_timeframe` double(10,2) NOT NULL DEFAULT '5.00',
-  `crypto_capital_pk` varchar(255) NOT NULL,
+  /* some fake crypto capital key to run a project */
+  `crypto_capital_pk` varchar(255) NOT NULL DEFAULT 'L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy',
   `deposit_fiat_desc` varchar(255) NOT NULL,
   `email_notify_fiat_failed` enum('Y','N') NOT NULL DEFAULT 'Y',
   `trading_status` varchar(255) NOT NULL,
